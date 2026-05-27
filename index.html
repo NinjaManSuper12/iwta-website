@@ -1,0 +1,2155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>International Wealth Tax Advisors | International Tax & Wealth Advisory</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+    rel="stylesheet" />
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      /* Brand tokens */
+      --color-navy-deep: #0D2545;
+      --color-navy-brand: #1B3A6B;
+      --color-navy-mid: #2E5497;
+      --color-gold: #C9A84C;
+      --color-off-white: #F5F7FA;
+      --color-ice-blue: #EAF0F8;
+      --color-silver: #E2E6ED;
+      --color-slate: #4A5568;
+      --color-cream: #F5EDD6;
+
+      /* Derived utility tokens */
+      --bg: var(--color-off-white);
+      --surface: var(--color-ice-blue);
+      --border: var(--color-silver);
+      --text: var(--color-slate);
+      --muted: rgba(74, 85, 104, 0.6);
+      --gold: var(--color-gold);
+      --gold-dim: rgba(201, 168, 76, 0.14);
+      --gold-glow: rgba(201, 168, 76, 0.07);
+      --radius: 2.5rem;
+      --ease: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scrollbar-width: none;
+    }
+
+    html::-webkit-scrollbar {
+      display: none;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Outfit', sans-serif;
+      font-weight: 300;
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── CURSOR ─────────────────────────────────────── */
+    #cursor {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 9999;
+      width: 8px;
+      height: 8px;
+      background: var(--gold);
+      border-radius: 50%;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      transition: transform 0.08s var(--ease), width 0.3s var(--ease), height 0.3s var(--ease), opacity 0.3s;
+      mix-blend-mode: normal;
+    }
+
+    #cursor-ring {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 9998;
+      width: 36px;
+      height: 36px;
+      border: 1px solid rgba(201, 168, 76, 0.4);
+      border-radius: 50%;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      transition: transform 0.18s var(--ease), width 0.3s var(--ease), height 0.3s var(--ease), border-color 0.3s;
+    }
+
+    body:has(a:hover) #cursor {
+      width: 14px;
+      height: 14px;
+      background: var(--gold);
+    }
+
+    body:has(a:hover) #cursor-ring {
+      width: 52px;
+      height: 52px;
+      border-color: rgba(201, 168, 76, 0.7);
+    }
+
+    /* ─── NAV ────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.75rem 4rem;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.4s, background 0.4s, padding 0.4s;
+    }
+
+    nav.scrolled {
+      border-color: rgba(255, 255, 255, 0.1);
+      background: rgba(13, 37, 69, 0.95);
+      backdrop-filter: blur(20px);
+      padding: 1.2rem 4rem;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .nav-logo span {
+      color: var(--gold);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.8rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(245, 247, 250, 0.6);
+      text-decoration: none;
+      transition: color 0.25s;
+    }
+
+    .nav-links a:hover {
+      color: var(--color-off-white);
+    }
+
+    .nav-cta {
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-decoration: none;
+      border: 1px solid rgba(201, 168, 76, 0.4);
+      padding: 0.65rem 1.6rem;
+      border-radius: 2rem;
+      transition: background 0.3s, border-color 0.3s, color 0.3s;
+    }
+
+    .nav-cta:hover {
+      background: var(--gold);
+      color: var(--color-navy-deep);
+      border-color: var(--gold);
+    }
+
+    /* ─── HERO ───────────────────────────────────────── */
+    .hero {
+      min-height: 100dvh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .hero-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 118%;
+      height: 100%;
+      object-fit: cover;
+      object-position: left center;
+      z-index: 0;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(
+        to bottom,
+        rgba(13,37,69,0.25) 0%,
+        rgba(13,37,69,0.05) 45%,
+        rgba(13,37,69,0.55) 100%
+      );
+    }
+
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 10rem 6rem 6rem;
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1400px;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-tag::before,
+    .hero-tag::after {
+      content: '';
+      width: 28px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3.2rem, 5.5vw, 6.5rem);
+      font-weight: 400;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      margin-bottom: 2rem;
+      color: var(--color-off-white);
+      text-shadow: 0 4px 32px rgba(0, 0, 0, 0.35);
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .hero-sub {
+      font-size: 1.05rem;
+      color: rgba(245, 247, 250, 0.75);
+      max-width: 60ch;
+      line-height: 1.8;
+      margin-bottom: 3.5rem;
+      text-shadow: 0 2px 16px rgba(0, 0, 0, 0.4);
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: var(--gold);
+      color: var(--color-navy-deep);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 1rem 2.2rem;
+      border-radius: 3rem;
+      transition: transform 0.3s var(--ease), box-shadow 0.3s;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 40px rgba(201, 168, 76, 0.3);
+    }
+
+    .btn-primary svg {
+      transition: transform 0.3s var(--ease);
+    }
+
+    .btn-primary:hover svg {
+      transform: translateX(4px);
+    }
+
+    .btn-ghost {
+      font-size: 0.82rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(245, 247, 250, 0.6);
+      text-decoration: none;
+      transition: color 0.25s;
+    }
+
+    .btn-ghost:hover {
+      color: var(--color-off-white);
+    }
+
+    .live-dot {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.7rem;
+      color: #4caf82;
+      letter-spacing: 0.1em;
+    }
+
+    .live-dot::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: #4caf82;
+      border-radius: 50%;
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse-dot {
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 0.5;
+        transform: scale(0.8);
+      }
+    }
+
+    .hero-scroll-hint {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(245, 247, 250, 0.45);
+      z-index: 10;
+    }
+
+    .scroll-line {
+      width: 40px;
+      height: 1px;
+      background: rgba(245, 247, 250, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .scroll-line::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--gold);
+      animation: slide-line 2s ease-in-out infinite;
+    }
+
+    @keyframes slide-line {
+      0% {
+        transform: translateX(-100%);
+      }
+
+      50% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(100%);
+      }
+    }
+
+    /* ─── SECTION BASE ───────────────────────────────── */
+    section {
+      padding: 7rem 4rem;
+    }
+
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+
+    .section-tag::before {
+      content: '';
+      width: 20px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .section-h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 3.5vw, 3.6rem);
+      font-weight: 400;
+      line-height: 1.15;
+      letter-spacing: -0.015em;
+      color: var(--color-navy-deep);
+    }
+
+    .section-h2 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    /* ─── MARQUEE ────────────────────────────────────── */
+    .marquee-wrap {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 1.4rem 0;
+      overflow: hidden;
+    }
+
+    .marquee-track {
+      display: flex;
+      gap: 4rem;
+      animation: marquee 28s linear infinite;
+      width: max-content;
+    }
+
+    .marquee-item {
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+    }
+
+    .marquee-item::after {
+      content: '◆';
+      color: var(--gold);
+      font-size: 0.5rem;
+    }
+
+    @keyframes marquee {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* ─── SERVICES ───────────────────────────────────── */
+    .services {
+      background: var(--bg);
+    }
+
+    .services-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: end;
+      margin-bottom: 5rem;
+    }
+
+    .services-desc {
+      font-size: 1rem;
+      color: var(--muted);
+      line-height: 1.8;
+      max-width: 42ch;
+    }
+
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: auto;
+      gap: 1.25rem;
+    }
+
+    .bento-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2.5rem;
+      transition: border-color 0.4s, transform 0.4s var(--ease), box-shadow 0.4s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .bento-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(46, 84, 151, 0.07) 0%, transparent 55%);
+      opacity: 0;
+      transition: opacity 0.4s;
+      pointer-events: none;
+    }
+
+    .bento-card:hover {
+      border-color: rgba(46, 84, 151, 0.35);
+      transform: translateY(-3px);
+      box-shadow: 0 24px 48px rgba(13, 37, 69, 0.12);
+    }
+
+    .bento-card:hover::before {
+      opacity: 1;
+    }
+
+    .bc-1 {
+      grid-column: span 5;
+    }
+
+    .bc-2 {
+      grid-column: span 7;
+    }
+
+    .bc-3 {
+      grid-column: span 4;
+    }
+
+    .bc-4 {
+      grid-column: span 4;
+    }
+
+    .bc-5 {
+      grid-column: span 4;
+    }
+
+    .bc-6 {
+      grid-column: span 12;
+      padding: 2.5rem 3rem;
+    }
+
+    .bento-icon {
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--color-navy-brand);
+      border: 1px solid rgba(27, 58, 107, 0.3);
+      border-radius: 0.75rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .bento-icon svg {
+      stroke: var(--color-off-white);
+    }
+
+    .bento-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .bento-title {
+      font-size: 1.15rem;
+      font-weight: 600;
+      line-height: 1.35;
+      margin-bottom: 1rem;
+      color: var(--color-navy-deep);
+    }
+
+    .bento-body {
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .bento-tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .bento-tag {
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-navy-brand);
+      background: rgba(27, 58, 107, 0.08);
+      border: 1px solid rgba(27, 58, 107, 0.18);
+      padding: 0.35rem 0.85rem;
+      border-radius: 2rem;
+    }
+
+    .bc-6-inner {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .bc-6-stat {
+      font-family: 'Playfair Display', serif;
+      font-size: 4.5rem;
+      font-weight: 600;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .bc-6-label {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 0.5rem;
+    }
+
+    .bc-6-body {
+      font-size: 1rem;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    /* ─── HOW WE WORK ────────────────────────────────── */
+    .process {
+      background: var(--color-cream);
+      border-top: 1px solid rgba(201, 168, 76, 0.2);
+      border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: start;
+    }
+
+    .process-steps {
+      margin-top: 3rem;
+    }
+
+    .process-step {
+      display: grid;
+      grid-template-columns: 3rem 1fr;
+      gap: 1.5rem;
+      padding: 2rem 0;
+      border-bottom: 1px solid var(--border);
+      cursor: pointer;
+      transition: padding-left 0.3s var(--ease);
+    }
+
+    .process-step:first-child {
+      border-top: 1px solid var(--border);
+    }
+
+    .process-step:hover {
+      padding-left: 0.5rem;
+    }
+
+    .step-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.85rem;
+      color: var(--gold);
+      padding-top: 0.2rem;
+    }
+
+    .step-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--color-navy-deep);
+      margin-bottom: 0.6rem;
+    }
+
+    .step-body {
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .process-visual {
+      position: sticky;
+      top: 8rem;
+      background: var(--color-off-white);
+      border: 1px solid var(--color-silver);
+      border-radius: var(--radius);
+      padding: 3rem;
+      margin-top: 3rem;
+    }
+
+    .pv-title {
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 2rem;
+    }
+
+    .pv-jurisdiction {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .pv-jurisdiction:last-child {
+      border-bottom: none;
+    }
+
+    .pv-country {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.875rem;
+    }
+
+    .flag {
+      width: 28px;
+      height: 20px;
+      border-radius: 3px;
+      background: var(--gold-dim);
+      border: 1px solid rgba(201, 168, 76, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+    }
+
+    .pv-status {
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .status-active {
+      color: #4caf82;
+    }
+
+    .status-advisory {
+      color: var(--gold);
+    }
+
+    .coverage-bar {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .coverage-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .coverage-track {
+      height: 4px;
+      background: var(--gold-dim);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .coverage-fill {
+      height: 100%;
+      background: var(--gold);
+      border-radius: 2px;
+      animation: fill-bar 2s 0.5s var(--ease) both;
+    }
+
+    @keyframes fill-bar {
+      from {
+        width: 0;
+      }
+
+      to {
+        width: 78%;
+      }
+    }
+
+    /* ─── INSIGHTS ───────────────────────────────────── */
+    .insights {
+      background: var(--bg);
+    }
+
+    .insights-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 4rem;
+    }
+
+    .insights-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 1.25rem;
+    }
+
+    .insight-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2.5rem;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.4s, transform 0.4s var(--ease);
+    }
+
+    .insight-card:hover {
+      border-color: rgba(46, 84, 151, 0.3);
+      transform: translateY(-3px);
+      box-shadow: 0 16px 40px rgba(13, 37, 69, 0.1);
+    }
+
+    .insight-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+
+    .insight-cat {
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-navy-brand);
+      background: rgba(27, 58, 107, 0.08);
+      border: 1px solid rgba(27, 58, 107, 0.18);
+      padding: 0.3rem 0.75rem;
+      border-radius: 2rem;
+    }
+
+    .insight-date {
+      font-size: 0.72rem;
+      color: var(--muted);
+    }
+
+    .insight-title {
+      font-family: 'Playfair Display', serif;
+      font-weight: 400;
+      line-height: 1.3;
+      color: var(--color-navy-deep);
+      flex: 1;
+    }
+
+    .insight-card.featured .insight-title {
+      font-size: 1.65rem;
+    }
+
+    .insight-card:not(.featured) .insight-title {
+      font-size: 1.05rem;
+    }
+
+    .insight-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .insight-author {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .insight-arrow {
+      width: 36px;
+      height: 36px;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s, border-color 0.3s;
+    }
+
+    .insight-card:hover .insight-arrow {
+      background: var(--color-navy-mid);
+      border-color: var(--color-navy-mid);
+    }
+
+    .insight-card:hover .insight-arrow svg {
+      stroke: white;
+    }
+
+    /* ─── TEAM ───────────────────────────────────────── */
+    .team {
+      background: var(--color-off-white);
+      border-top: 1px solid var(--color-silver);
+    }
+
+    .team-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: end;
+      margin-bottom: 4rem;
+    }
+
+    .team-sub {
+      font-size: 1rem;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+    }
+
+    .team-card {
+      background: var(--color-ice-blue);
+      border: 1px solid var(--color-silver);
+      border-radius: 1.5rem;
+      overflow: hidden;
+      transition: border-color 0.4s, transform 0.4s var(--ease);
+    }
+
+    .team-card:hover {
+      border-color: rgba(46, 84, 151, 0.35);
+      transform: translateY(-3px);
+      box-shadow: 0 16px 40px rgba(13, 37, 69, 0.1);
+    }
+
+    .team-portrait {
+      aspect-ratio: 1;
+      background: linear-gradient(135deg, var(--color-navy-brand) 0%, var(--color-navy-deep) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .portrait-lines {
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(-45deg,
+          transparent,
+          transparent 2px,
+          rgba(201, 168, 76, 0.06) 2px,
+          rgba(201, 168, 76, 0.06) 4px);
+    }
+
+    .portrait-initials {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: rgba(245, 247, 250, 0.3);
+      letter-spacing: 0.05em;
+    }
+
+    .team-info {
+      padding: 1.5rem;
+    }
+
+    .team-name {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--color-navy-deep);
+      margin-bottom: 0.25rem;
+    }
+
+    .team-role {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .team-jurisdictions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .tj {
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      color: var(--color-navy-brand);
+      background: rgba(27, 58, 107, 0.08);
+      border: 1px solid rgba(27, 58, 107, 0.15);
+      padding: 0.2rem 0.6rem;
+      border-radius: 2rem;
+    }
+
+    /* ─── TESTIMONIALS ───────────────────────────────── */
+    .testimonials {
+      background: var(--bg);
+      overflow: hidden;
+    }
+
+    .testimonials-header {
+      margin-bottom: 4rem;
+    }
+
+    .testimonials-track {
+      display: flex;
+      gap: 1.5rem;
+      animation: scroll-x 40s linear infinite;
+      width: max-content;
+    }
+
+    .testimonials-track:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes scroll-x {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    .testimonial-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2.5rem;
+      width: 380px;
+      flex-shrink: 0;
+    }
+
+    .testimonial-quote {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-weight: 400;
+      font-style: italic;
+      color: var(--color-navy-deep);
+      line-height: 1.65;
+      margin-bottom: 2rem;
+    }
+
+    .testimonial-quote::before {
+      content: '\201C';
+      color: var(--gold);
+      font-size: 1.5rem;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .author-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--color-navy-brand);
+      border: 1px solid rgba(27, 58, 107, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 0.9rem;
+      color: var(--color-off-white);
+    }
+
+    .author-name {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--color-navy-deep);
+    }
+
+    .author-title {
+      font-size: 0.72rem;
+      color: var(--muted);
+    }
+
+    .stars {
+      display: flex;
+      gap: 2px;
+      margin-top: 0.3rem;
+    }
+
+    .star {
+      color: var(--gold);
+      font-size: 0.7rem;
+    }
+
+    /* ─── CONTACT ────────────────────────────────────── */
+    .contact {
+      background: var(--color-ice-blue);
+      border-top: 1px solid var(--color-silver);
+    }
+
+    .contact-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+    }
+
+    .contact-left .section-h2 {
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-desc {
+      font-size: 1rem;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 3rem;
+    }
+
+    .contact-offices {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .office {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1.5rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+    }
+
+    .office-flag {
+      font-size: 1.5rem;
+    }
+
+    .office-city {
+      font-size: 0.875rem;
+      font-weight: 500;
+      margin-bottom: 0.25rem;
+    }
+
+    .office-addr {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .contact-form {
+      background: white;
+      border: 1px solid var(--color-silver);
+      border-radius: var(--radius);
+      padding: 3rem;
+    }
+
+    .form-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin-bottom: 2rem;
+      color: var(--color-navy-deep);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .form-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .form-input,
+    .form-select,
+    .form-textarea {
+      background: var(--color-ice-blue);
+      border: 1px solid var(--color-silver);
+      border-radius: 0.75rem;
+      padding: 0.875rem 1.1rem;
+      color: var(--color-slate);
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 400;
+      transition: border-color 0.3s, box-shadow 0.3s;
+      outline: none;
+      width: 100%;
+    }
+
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus {
+      border-color: var(--color-navy-mid);
+      box-shadow: 0 0 0 3px rgba(46, 84, 151, 0.08);
+    }
+
+    .form-select {
+      appearance: none;
+      cursor: pointer;
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .form-input::placeholder,
+    .form-textarea::placeholder {
+      color: var(--muted);
+    }
+
+    .form-submit {
+      width: 100%;
+      padding: 1rem;
+      background: var(--gold);
+      color: var(--color-navy-deep);
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 3rem;
+      cursor: pointer;
+      transition: transform 0.3s var(--ease), box-shadow 0.3s;
+      margin-top: 0.5rem;
+    }
+
+    .form-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 32px rgba(201, 168, 76, 0.25);
+    }
+
+    /* ─── FOOTER ─────────────────────────────────────── */
+    footer {
+      background: var(--color-navy-deep);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 4rem;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 4rem;
+      margin-bottom: 4rem;
+    }
+
+    .footer-brand {
+      max-width: 28ch;
+    }
+
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      color: var(--color-off-white);
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+
+    .footer-logo span {
+      color: var(--gold);
+    }
+
+    .footer-tagline {
+      font-size: 0.875rem;
+      color: rgba(245, 247, 250, 0.5);
+      line-height: 1.7;
+    }
+
+    .footer-col-title {
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(245, 247, 250, 0.4);
+      margin-bottom: 1.25rem;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .footer-links a {
+      font-size: 0.875rem;
+      color: rgba(245, 247, 250, 0.55);
+      text-decoration: none;
+      transition: color 0.25s;
+    }
+
+    .footer-links a:hover {
+      color: var(--color-off-white);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .footer-copy {
+      font-size: 0.75rem;
+      color: rgba(245, 247, 250, 0.35);
+    }
+
+    .footer-legal {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .footer-legal a {
+      font-size: 0.75rem;
+      color: rgba(245, 247, 250, 0.4);
+      text-decoration: none;
+      transition: color 0.25s;
+    }
+
+    .footer-legal a:hover {
+      color: var(--color-off-white);
+    }
+
+    /* ─── REVEAL ANIMATIONS ──────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 {
+      transition-delay: 0.1s;
+    }
+
+    .reveal-delay-2 {
+      transition-delay: 0.2s;
+    }
+
+    .reveal-delay-3 {
+      transition-delay: 0.3s;
+    }
+
+    /* ─── RESPONSIVE ─────────────────────────────────── */
+    @media (max-width: 1024px) {
+
+      .services-header,
+      .process-grid,
+      .team-header,
+      .contact-inner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .bento-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .bc-1,
+      .bc-2,
+      .bc-3,
+      .bc-4,
+      .bc-5,
+      .bc-6 {
+        grid-column: span 2;
+      }
+
+      .bc-3,
+      .bc-4,
+      .bc-5 {
+        grid-column: span 1;
+      }
+
+      .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .insights-grid {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        padding: 1.5rem 2rem;
+      }
+
+      nav.scrolled {
+        padding: 1rem 2rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      section {
+        padding: 5rem 2rem;
+      }
+
+      footer {
+        padding: 3rem 2rem;
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero-left {
+        padding: 8rem 2rem 4rem;
+      }
+
+      .bento-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .bc-1,
+      .bc-2,
+      .bc-3,
+      .bc-4,
+      .bc-5,
+      .bc-6 {
+        grid-column: span 1;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .team-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="cursor"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- ─── NAV ──────────────────────────────────────── -->
+  <nav id="nav">
+    <a href="#" class="nav-logo">
+      <img src="iwta-logo-white.png" alt="International Wealth Tax Advisors" style="height: clamp(44px, 5vw, 72px); width: auto; display: block;" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#process">Approach</a></li>
+      <li><a href="#insights">Insights</a></li>
+      <li><a href="#team">Our Team</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Refer a Matter</a>
+  </nav>
+
+  <!-- ─── HERO ──────────────────────────────────────── -->
+  <section class="hero" style="padding: 0;">
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="Logoanimation3.mp4" type="video/mp4" />
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-left">
+      <div class="hero-tag">U.S. Cross-Border Tax Advisory</div>
+      <h1>Clarity for counsel.<br />Precision for <em>every</em><br />structure.</h1>
+      <p class="hero-sub">
+        International Wealth Tax Advisors provides U.S. and international tax counsel to trust and estate attorneys, private wealth advisors, fiduciaries, and family offices managing clients with cross-border complexity.
+      </p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">
+          Begin a Conversation
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </a>
+        <a href="#services" class="btn-ghost">Our Services →</a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <div class="scroll-line"></div>
+      Scroll to explore
+    </div>
+  </section>
+
+  <!-- ─── MARQUEE ──────────────────────────────────── -->
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <span class="marquee-item">Foreign Trust Reporting</span>
+      <span class="marquee-item">FBAR Compliance</span>
+      <span class="marquee-item">Pre-Immigration Planning</span>
+      <span class="marquee-item">NRA Tax Planning</span>
+      <span class="marquee-item">Voluntary Disclosure</span>
+      <span class="marquee-item">FATCA Compliance</span>
+      <span class="marquee-item">Cross-Border Estate Planning</span>
+      <span class="marquee-item">Inbound U.S. Investment</span>
+      <span class="marquee-item">Gift Tax Structuring</span>
+      <span class="marquee-item">Expatriation Planning</span>
+      <span class="marquee-item">Foreign Asset Reporting</span>
+      <span class="marquee-item">U.S. Real Estate for Non-Residents</span>
+      <!-- duplicate for seamless loop -->
+      <span class="marquee-item">Foreign Trust Reporting</span>
+      <span class="marquee-item">FBAR Compliance</span>
+      <span class="marquee-item">Pre-Immigration Planning</span>
+      <span class="marquee-item">NRA Tax Planning</span>
+      <span class="marquee-item">Voluntary Disclosure</span>
+      <span class="marquee-item">FATCA Compliance</span>
+      <span class="marquee-item">Cross-Border Estate Planning</span>
+      <span class="marquee-item">Inbound U.S. Investment</span>
+      <span class="marquee-item">Gift Tax Structuring</span>
+      <span class="marquee-item">Expatriation Planning</span>
+      <span class="marquee-item">Foreign Asset Reporting</span>
+      <span class="marquee-item">U.S. Real Estate for Non-Residents</span>
+    </div>
+  </div>
+
+  <!-- ─── SERVICES ─────────────────────────────────── -->
+  <section class="services" id="services">
+    <div class="services-header reveal">
+      <div>
+        <div class="section-tag">Our Practice Areas</div>
+        <h2 class="section-h2">Specialist counsel for<br />the cases <em>others refer.</em></h2>
+      </div>
+      <p class="services-desc">
+        IWTA handles the U.S. and international tax issues that arise at the intersection of cross-border wealth, foreign structures, and U.S. tax law — the precise matters that trust attorneys and fiduciaries need a dedicated specialist to resolve.
+      </p>
+    </div>
+    <div class="bento-grid">
+      <div class="bento-card bc-1 reveal">
+        <div class="bento-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+        </div>
+        <div class="bento-num">01</div>
+        <div class="bento-title">Foreign Trusts, Estate &amp; Gift Tax</div>
+        <div class="bento-body">Strategic consulting on foreign trust structures, wealth transfer planning, and gift tax exposure for international families with U.S. connections. We work directly with trust counsel to resolve reporting obligations and structural weaknesses.</div>
+        <div class="bento-tag-list">
+          <span class="bento-tag">Foreign Trusts</span>
+          <span class="bento-tag">Form 3520</span>
+          <span class="bento-tag">Estate Planning</span>
+        </div>
+      </div>
+      <div class="bento-card bc-2 reveal reveal-delay-1">
+        <div class="bento-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <div class="bento-num">02</div>
+        <div class="bento-title">Pre-Immigration &amp; Expatriation Planning</div>
+        <div class="bento-body">For individuals planning to become U.S. taxpayers or terminate citizen and green card status. We model and mitigate the substantial tax consequences that arise from these transitions before they become irreversible.</div>
+        <div class="bento-tag-list">
+          <span class="bento-tag">Exit Tax</span>
+          <span class="bento-tag">Green Card</span>
+          <span class="bento-tag">Covered Expatriate</span>
+        </div>
+      </div>
+      <div class="bento-card bc-3 reveal">
+        <div class="bento-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="3" width="20" height="18" rx="2"/><path d="M8 21V3M16 21V3M2 9h20M2 15h20"/>
+          </svg>
+        </div>
+        <div class="bento-num">03</div>
+        <div class="bento-title">U.S. Real Estate &amp; Foreign Investment</div>
+        <div class="bento-body">Tax planning for non-U.S. persons investing in U.S. real estate and business. FIRPTA analysis, treaty planning, and structuring for inbound investment to minimize U.S. tax exposure.</div>
+        <div class="bento-tag-list">
+          <span class="bento-tag">FIRPTA</span>
+          <span class="bento-tag">Inbound Investment</span>
+          <span class="bento-tag">Treaty Planning</span>
+        </div>
+      </div>
+      <div class="bento-card bc-4 reveal reveal-delay-1">
+        <div class="bento-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>
+          </svg>
+        </div>
+        <div class="bento-num">04</div>
+        <div class="bento-title">FBAR &amp; Foreign Asset Reporting</div>
+        <div class="bento-body">FBAR, FATCA Form 8938, and all foreign financial asset disclosure requirements. We build proactive compliance calendars so U.S. persons with foreign accounts and investments never face avoidable penalties.</div>
+        <div class="bento-tag-list">
+          <span class="bento-tag">FBAR</span>
+          <span class="bento-tag">Form 8938</span>
+          <span class="bento-tag">FATCA</span>
+        </div>
+      </div>
+      <div class="bento-card bc-5 reveal reveal-delay-2">
+        <div class="bento-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
+          </svg>
+        </div>
+        <div class="bento-num">05</div>
+        <div class="bento-title">Voluntary Disclosure &amp; Back Compliance</div>
+        <div class="bento-body">For taxpayers who have fallen behind on U.S. tax filing or international disclosure obligations. We navigate IRS voluntary disclosure programs and streamlined procedures to restore compliance with minimal exposure.</div>
+        <div class="bento-tag-list">
+          <span class="bento-tag">IRS VDP</span>
+          <span class="bento-tag">Streamlined</span>
+          <span class="bento-tag">OVDP</span>
+        </div>
+      </div>
+      <div class="bento-card bc-6 reveal">
+        <div class="bc-6-inner">
+          <div>
+            <div class="bc-6-stat">8</div>
+            <div class="bc-6-label">Specialized Practice Areas</div>
+          </div>
+          <div>
+            <div class="bento-title">A practice built entirely around cross-border complexity.</div>
+            <p class="bc-6-body">From NRA tax planning and inbound business structuring to FATCA compliance and foreign trust reporting — every service IWTA offers exists because cross-border tax requires a specialist, not a generalist. Attorneys and fiduciaries refer to IWTA because the work requires it.</p>
+            <div class="bento-tag-list" style="margin-top: 1.25rem;">
+              <span class="bento-tag">NRA Planning</span>
+              <span class="bento-tag">Business Activities</span>
+              <span class="bento-tag">FATCA</span>
+              <span class="bento-tag">Foreign Trusts</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── HOW WE WORK ───────────────────────────────── -->
+  <section class="process" id="process">
+    <div class="process-grid reveal">
+      <div>
+        <div class="section-tag">How We Work With Counsel</div>
+        <h2 class="section-h2">Rigour that attorneys<br />can <em>rely on.</em></h2>
+        <div class="process-steps">
+          <div class="process-step">
+            <span class="step-num">01</span>
+            <div>
+              <div class="step-title">Initial Case Review</div>
+              <div class="step-body">We review the client's existing structures, residency history, asset classes, and filing history before forming any view. Referrals from counsel receive a confidential written summary of issues identified.</div>
+            </div>
+          </div>
+          <div class="process-step">
+            <span class="step-num">02</span>
+            <div>
+              <div class="step-title">Issue Identification &amp; Scoping</div>
+              <div class="step-body">We isolate the specific U.S. tax exposure — FBAR gaps, foreign trust reporting failures, exit tax risk, or inbound structuring issues — and provide counsel with a clear written scope of work before engagement begins.</div>
+            </div>
+          </div>
+          <div class="process-step">
+            <span class="step-num">03</span>
+            <div>
+              <div class="step-title">Technical Analysis &amp; Recommendation</div>
+              <div class="step-body">Our written analysis sets out the legal basis, quantified exposure, and recommended resolution path. We present options with trade-offs — not a single view dressed as advice.</div>
+            </div>
+          </div>
+          <div class="process-step">
+            <span class="step-num">04</span>
+            <div>
+              <div class="step-title">Implementation &amp; Filing</div>
+              <div class="step-body">We prepare and file all required returns, disclosures, and compliance documents. Where voluntary disclosure is required, we manage the IRS process from submission through resolution.</div>
+            </div>
+          </div>
+          <div class="process-step">
+            <span class="step-num">05</span>
+            <div>
+              <div class="step-title">Ongoing Advisory Relationship</div>
+              <div class="step-body">Many attorney referrals become standing relationships. We serve as the retained international tax resource for firms that regularly encounter cross-border matters — available when the next complex case arrives.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="process-visual reveal reveal-delay-2">
+          <div class="pv-title">Practice Jurisdictions</div>
+          <div class="pv-jurisdiction">
+            <div class="pv-country"><div class="flag">🇺🇸</div>United States</div>
+            <span class="pv-status status-active">Primary Practice</span>
+          </div>
+          <div class="pv-jurisdiction">
+            <div class="pv-country"><div class="flag">🇨🇭</div>Switzerland</div>
+            <span class="pv-status status-advisory">Advisory Network</span>
+          </div>
+          <div class="pv-jurisdiction">
+            <div class="pv-country"><div class="flag">🇬🇧</div>United Kingdom</div>
+            <span class="pv-status status-advisory">Advisory Network</span>
+          </div>
+          <div class="pv-jurisdiction">
+            <div class="pv-country"><div class="flag">🇰🇾</div>Cayman Islands</div>
+            <span class="pv-status status-advisory">Advisory Network</span>
+          </div>
+          <div class="pv-jurisdiction">
+            <div class="pv-country"><div class="flag">🇸🇬</div>Singapore</div>
+            <span class="pv-status status-advisory">Advisory Network</span>
+          </div>
+          <div class="pv-jurisdiction">
+            <div class="pv-country"><div class="flag">🇦🇪</div>UAE</div>
+            <span class="pv-status status-advisory">Advisory Network</span>
+          </div>
+          <div class="coverage-bar">
+            <div class="coverage-label">Cross-Border Case Coverage</div>
+            <div class="coverage-track"><div class="coverage-fill"></div></div>
+            <div style="display:flex; justify-content:space-between; margin-top: 0.5rem;">
+              <span style="font-size:0.7rem; color: var(--muted);">78 of 100 major networks</span>
+              <span style="font-size:0.7rem; color: var(--gold);">78%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── INSIGHTS ──────────────────────────────────── -->
+  <section class="insights" id="insights">
+    <div class="insights-header reveal">
+      <div>
+        <div class="section-tag">IWTA Perspectives</div>
+        <h2 class="section-h2">Technical insight for<br />counsel and <em>advisors.</em></h2>
+      </div>
+      <a href="#" class="btn-ghost">View All Insights →</a>
+    </div>
+    <div class="insights-grid reveal">
+      <a href="#" class="insight-card featured">
+        <div class="insight-meta">
+          <span class="insight-cat">Foreign Trusts</span>
+          <span class="insight-date">May 2026</span>
+        </div>
+        <div class="insight-title">Form 3520 Penalties and the Case for Proactive Disclosure: What Trust Attorneys Need to Know in 2026</div>
+        <div class="insight-footer">
+          <span class="insight-author">Jack Brister, Principal</span>
+          <div class="insight-arrow">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--muted)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+      </a>
+      <a href="#" class="insight-card">
+        <div class="insight-meta">
+          <span class="insight-cat">Expatriation</span>
+          <span class="insight-date">Apr 2026</span>
+        </div>
+        <div class="insight-title">The Covered Expatriate Test: Why Pre-Immigration Planning Matters More Than Most Clients Realize</div>
+        <div class="insight-footer">
+          <span class="insight-author">IWTA Advisory Team</span>
+          <div class="insight-arrow">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--muted)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+      </a>
+      <a href="#" class="insight-card">
+        <div class="insight-meta">
+          <span class="insight-cat">FBAR</span>
+          <span class="insight-date">Mar 2026</span>
+        </div>
+        <div class="insight-title">Willful vs. Non-Willful FBAR Violations: How Courts Are Shifting the Standard in 2026</div>
+        <div class="insight-footer">
+          <span class="insight-author">IWTA Advisory Team</span>
+          <div class="insight-arrow">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--muted)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ─── TEAM ──────────────────────────────────────── -->
+  <section class="team" id="team">
+    <div class="team-header reveal">
+      <div>
+        <div class="section-tag">Our People</div>
+        <h2 class="section-h2">Led by a specialist<br />the profession <em>trusts.</em></h2>
+      </div>
+      <p class="team-sub">
+        Jack Brister founded International Wealth Tax Advisors on a single conviction: that U.S. cross-border tax work demands a dedicated specialist. Every engagement is personally overseen by a senior advisor with deep technical authority in the specific issue at hand.
+      </p>
+    </div>
+    <div class="team-grid reveal">
+      <div class="team-card">
+        <div class="team-portrait">
+          <div class="portrait-lines"></div>
+          <div class="portrait-initials">JB</div>
+        </div>
+        <div class="team-info">
+          <div class="team-name">Jack Brister</div>
+          <div class="team-role">Founder &amp; Principal Advisor</div>
+          <div class="team-jurisdictions">
+            <span class="tj">Foreign Trusts</span><span class="tj">Cross-Border Tax</span><span class="tj">FBAR</span>
+          </div>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-portrait">
+          <div class="portrait-lines"></div>
+          <div class="portrait-initials">TBA</div>
+        </div>
+        <div class="team-info">
+          <div class="team-name">Senior Tax Advisor</div>
+          <div class="team-role">International Tax Counsel</div>
+          <div class="team-jurisdictions">
+            <span class="tj">Pre-Immigration</span><span class="tj">NRA Planning</span><span class="tj">Expat Tax</span>
+          </div>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-portrait">
+          <div class="portrait-lines"></div>
+          <div class="portrait-initials">TBA</div>
+        </div>
+        <div class="team-info">
+          <div class="team-name">Estate &amp; Trust Specialist</div>
+          <div class="team-role">Trust &amp; Estate Tax</div>
+          <div class="team-jurisdictions">
+            <span class="tj">Foreign Estates</span><span class="tj">Gift Tax</span><span class="tj">Form 3520</span>
+          </div>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-portrait">
+          <div class="portrait-lines"></div>
+          <div class="portrait-initials">TBA</div>
+        </div>
+        <div class="team-info">
+          <div class="team-name">Compliance Lead</div>
+          <div class="team-role">FATCA &amp; Reporting</div>
+          <div class="team-jurisdictions">
+            <span class="tj">FATCA</span><span class="tj">FBAR</span><span class="tj">Voluntary Disclosure</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── TESTIMONIALS ──────────────────────────────── -->
+  <section class="testimonials">
+    <div class="testimonials-header reveal">
+      <div class="section-tag">From the Professionals We Serve</div>
+      <h2 class="section-h2">Trusted by counsel<br />across <em>practice areas.</em></h2>
+    </div>
+    <div style="overflow: hidden; margin: 0 -4rem;">
+      <div class="testimonials-track">
+        <div class="testimonial-card">
+          <div class="testimonial-quote">Jack Brister is the first call I make when a trust client has foreign reporting exposure. The technical depth and turnaround are consistently exceptional.</div>
+          <div class="testimonial-author">
+            <div class="author-avatar">T</div>
+            <div>
+              <div class="author-name">Trust &amp; Estate Partner</div>
+              <div class="author-title">AmLaw 100 Firm, New York</div>
+              <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-quote">We refer our most complex pre-immigration matters to IWTA. The analysis is precise, the communication is clear, and our clients are always in good hands.</div>
+          <div class="testimonial-author">
+            <div class="author-avatar">P</div>
+            <div>
+              <div class="author-name">Private Wealth Attorney</div>
+              <div class="author-title">Boutique Wealth Practice, Miami</div>
+              <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-quote">IWTA handled a voluntary disclosure matter for a client with significant foreign asset exposure. The outcome was far better than we had modelled. Exceptional work.</div>
+          <div class="testimonial-author">
+            <div class="author-avatar">S</div>
+            <div>
+              <div class="author-name">Senior Fiduciary</div>
+              <div class="author-title">Multi-Family Office, Chicago</div>
+              <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-quote">What distinguishes IWTA is that Jack Brister understands how attorneys think. The written analysis is thorough, defensible, and delivered on time.</div>
+          <div class="testimonial-author">
+            <div class="author-avatar">E</div>
+            <div>
+              <div class="author-name">Estate Planning Counsel</div>
+              <div class="author-title">Regional Wealth Practice, Dallas</div>
+              <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+            </div>
+          </div>
+        </div>
+        <!-- duplicate for seamless loop -->
+        <div class="testimonial-card">
+          <div class="testimonial-quote">Jack Brister is the first call I make when a trust client has foreign reporting exposure. The technical depth and turnaround are consistently exceptional.</div>
+          <div class="testimonial-author">
+            <div class="author-avatar">T</div>
+            <div>
+              <div class="author-name">Trust &amp; Estate Partner</div>
+              <div class="author-title">AmLaw 100 Firm, New York</div>
+              <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-quote">We refer our most complex pre-immigration matters to IWTA. The analysis is precise, the communication is clear, and our clients are always in good hands.</div>
+          <div class="testimonial-author">
+            <div class="author-avatar">P</div>
+            <div>
+              <div class="author-name">Private Wealth Attorney</div>
+              <div class="author-title">Boutique Wealth Practice, Miami</div>
+              <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-quote">IWTA handled a voluntary disclosure matter for a client with significant foreign asset exposure. The outcome was far better than we had modelled. Exceptional work.</div>
+          <div class="testimonial-author">
+            <div class="author-avatar">S</div>
+            <div>
+              <div class="author-name">Senior Fiduciary</div>
+              <div class="author-title">Multi-Family Office, Chicago</div>
+              <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-quote">What distinguishes IWTA is that Jack Brister understands how attorneys think. The written analysis is thorough, defensible, and delivered on time.</div>
+          <div class="testimonial-author">
+            <div class="author-avatar">E</div>
+            <div>
+              <div class="author-name">Estate Planning Counsel</div>
+              <div class="author-title">Regional Wealth Practice, Dallas</div>
+              <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CONTACT ───────────────────────────────────── -->
+  <section class="contact" id="contact">
+    <div class="contact-inner">
+      <div class="contact-left reveal">
+        <div class="section-tag">Work With Us</div>
+        <h2 class="section-h2">Complex matters deserve<br />a direct <em>conversation.</em></h2>
+        <p class="contact-desc">
+          We accept referrals from attorneys, fiduciaries, and professional advisors on a confidential basis. Initial consultations are obligation-free. We will tell you plainly whether we can add value.
+        </p>
+        <div class="contact-offices">
+          <div class="office">
+            <div class="office-flag">🇺🇸</div>
+            <div>
+              <div class="office-city">New York, United States</div>
+              <div class="office-addr">132 W 31st Street, 9th Floor, New York, NY 10001</div>
+            </div>
+          </div>
+          <div class="office">
+            <div class="office-flag">📞</div>
+            <div>
+              <div class="office-city">(212) 256-1142</div>
+              <div class="office-addr">Monday – Friday, 9:00am – 5:00pm EST</div>
+            </div>
+          </div>
+          <div class="office">
+            <div class="office-flag">✉️</div>
+            <div>
+              <div class="office-city">info@iwtas.com</div>
+              <div class="office-addr">Confidential enquiries welcome</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form reveal reveal-delay-1">
+        <div class="form-title">Request a Confidential Consultation</div>
+        <div class="form-row">
+          <div class="form-field">
+            <label class="form-label">First Name</label>
+            <input type="text" class="form-input" placeholder="First name" />
+          </div>
+          <div class="form-field">
+            <label class="form-label">Last Name</label>
+            <input type="text" class="form-input" placeholder="Last name" />
+          </div>
+        </div>
+        <div class="form-field">
+          <label class="form-label">Email Address</label>
+          <input type="email" class="form-input" placeholder="your@firm.com" />
+        </div>
+        <div class="form-field">
+          <label class="form-label">Your Role</label>
+          <select class="form-select">
+            <option value="" disabled selected>Select your role</option>
+            <option>Attorney — Trust &amp; Estate</option>
+            <option>Attorney — Private Wealth</option>
+            <option>Attorney — Tax</option>
+            <option>Fiduciary / Trust Officer</option>
+            <option>Family Office</option>
+            <option>Accountant / CPA</option>
+            <option>Individual / Family</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label class="form-label">Primary Issue Area</label>
+          <select class="form-select">
+            <option value="" disabled selected>Select an issue area</option>
+            <option>Foreign Trust Reporting</option>
+            <option>Pre-Immigration Planning</option>
+            <option>Expatriation / Exit Tax</option>
+            <option>FBAR &amp; Foreign Asset Reporting</option>
+            <option>Voluntary Disclosure</option>
+            <option>NRA Tax Planning</option>
+            <option>U.S. Real Estate (Foreign Investor)</option>
+            <option>FATCA Compliance</option>
+            <option>Business Activities</option>
+            <option>Other / Not Sure</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label class="form-label">Brief Context</label>
+          <textarea class="form-textarea" placeholder="Please describe the matter briefly. All enquiries are treated as confidential."></textarea>
+        </div>
+        <button class="form-submit">Submit Referral</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ────────────────────────────────────── -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="iwta-logo-white.png" alt="International Wealth Tax Advisors" style="height: 36px; width: auto; opacity: 0.9; margin-bottom: 1rem;" />
+        <p class="footer-tagline">U.S. and international tax advisory for attorneys, fiduciaries, and family offices managing clients with cross-border complexity. Based in New York. Referred nationwide.</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Services</div>
+        <ul class="footer-links">
+          <li><a href="#">Foreign Trusts &amp; Estate Tax</a></li>
+          <li><a href="#">Pre-Immigration Planning</a></li>
+          <li><a href="#">FBAR &amp; Foreign Assets</a></li>
+          <li><a href="#">Voluntary Disclosure</a></li>
+          <li><a href="#">NRA Tax Planning</a></li>
+          <li><a href="#">FATCA Compliance</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Firm</div>
+        <ul class="footer-links">
+          <li><a href="#">Our Approach</a></li>
+          <li><a href="#">Jack Brister</a></li>
+          <li><a href="#">Insights</a></li>
+          <li><a href="#">Refer a Matter</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Connect</div>
+        <ul class="footer-links">
+          <li><a href="tel:2122561142">(212) 256-1142</a></li>
+          <li><a href="mailto:info@iwtas.com">info@iwtas.com</a></li>
+          <li><a href="#">LinkedIn</a></li>
+          <li><a href="#">New York, NY</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 International Wealth Tax Advisors, LLC. All rights reserved.</span>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Legal Notices</a>
+        <a href="#">Regulatory</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Custom cursor
+    const cursor = document.getElementById('cursor');
+    const ring = document.getElementById('cursor-ring');
+    let rx = 0, ry = 0;
+    document.addEventListener('mousemove', e => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+      rx += (e.clientX - rx) * 0.12;
+      ry += (e.clientY - ry) * 0.12;
+      ring.style.left = rx + 'px';
+      ring.style.top = ry + 'px';
+    });
+    function animateRing() {
+      rx += (parseFloat(cursor.style.left || 0) - rx) * 0.12;
+      ry += (parseFloat(cursor.style.top || 0) - ry) * 0.12;
+      ring.style.left = rx + 'px';
+      ring.style.top = ry + 'px';
+      requestAnimationFrame(animateRing);
+    }
+    animateRing();
+
+    // Nav scroll state
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+
+    // Bento card radial glow on hover
+    document.querySelectorAll('.bento-card').forEach(card => {
+      card.addEventListener('mousemove', e => {
+        const r = card.getBoundingClientRect();
+        const x = ((e.clientX - r.left) / r.width * 100).toFixed(1) + '%';
+        const y = ((e.clientY - r.top) / r.height * 100).toFixed(1) + '%';
+        card.style.setProperty('--mx', x);
+        card.style.setProperty('--my', y);
+      });
+    });
+
+    // Intersection observer — reveal on scroll
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // Contact form submit
+    document.querySelector('.form-submit').addEventListener('click', () => {
+      const btn = document.querySelector('.form-submit');
+      btn.textContent = 'Sending…';
+      btn.style.opacity = '0.7';
+      setTimeout(() => {
+        btn.textContent = 'Request Received';
+        btn.style.opacity = '1';
+        btn.style.background = '#4caf82';
+      }, 1200);
+    });
+  </script>
+</body>
+
+</html>
