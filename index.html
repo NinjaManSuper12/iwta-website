@@ -201,12 +201,10 @@
       position: absolute;
       inset: 0;
       z-index: 1;
-      background: linear-gradient(
-        to bottom,
-        rgba(13,37,69,0.25) 0%,
-        rgba(13,37,69,0.05) 45%,
-        rgba(13,37,69,0.55) 100%
-      );
+      background: linear-gradient(to bottom,
+          rgba(13, 37, 69, 0.25) 0%,
+          rgba(13, 37, 69, 0.05) 45%,
+          rgba(13, 37, 69, 0.55) 100%);
     }
 
     .hero-left {
@@ -426,6 +424,21 @@
     .section-h2 em {
       font-style: italic;
       color: var(--gold);
+    }
+
+    /* ─── CREDIBILITY STRIP ─────────────────────────── */
+    .credibility-strip {
+      background: var(--color-navy-deep);
+      padding: 1.6rem 4rem;
+      text-align: center;
+      border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+    }
+
+    .credibility-strip p {
+      font-size: 0.9rem;
+      letter-spacing: 0.04em;
+      color: rgba(245, 247, 250, 0.65);
+      font-weight: 300;
     }
 
     /* ─── MARQUEE ────────────────────────────────────── */
@@ -1475,7 +1488,8 @@
   <!-- ─── NAV ──────────────────────────────────────── -->
   <nav id="nav">
     <a href="#" class="nav-logo">
-      <img src="iwta-logo-white.png" alt="International Wealth Tax Advisors" style="height: clamp(44px, 5vw, 72px); width: auto; display: block;" />
+      <img src="iwta-logo-white.png" alt="International Wealth Tax Advisors"
+        style="height: clamp(44px, 5vw, 72px); width: auto; display: block;" />
     </a>
     <ul class="nav-links">
       <li><a href="#services">Services</a></li>
@@ -1493,15 +1507,13 @@
     </video>
     <div class="hero-overlay"></div>
     <div class="hero-left">
-      <div class="hero-tag">U.S. Cross-Border Tax Advisory</div>
-      <h1>Clarity for counsel.<br />Precision for <em>every</em><br />structure.</h1>
-      <p class="hero-sub">
-        International Wealth Tax Advisors provides U.S. and international tax counsel to trust and estate attorneys, private wealth advisors, fiduciaries, and family offices managing clients with cross-border complexity.
-      </p>
+      <div class="hero-tag">U.S. tax counsel for global families</div>
+      <h1>Guidance for complex<br />international lives, assets,<br />and <em>structures.</em></h1>
       <div class="hero-actions">
         <a href="#contact" class="btn-primary">
           Begin a Conversation
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
             <path d="M5 12h14M12 5l7 7-7 7" />
           </svg>
         </a>
@@ -1513,6 +1525,11 @@
       Scroll to explore
     </div>
   </section>
+
+  <!-- ─── CREDIBILITY STRIP ───────────────────────── -->
+  <div class="credibility-strip">
+    <p>Trusted by attorneys, fiduciaries, family offices, and private client advisors when U.S. tax issues cross borders.</p>
+  </div>
 
   <!-- ─── MARQUEE ──────────────────────────────────── -->
   <div class="marquee-wrap">
@@ -1550,86 +1567,100 @@
     <div class="services-header reveal">
       <div>
         <div class="section-tag">Our Practice Areas</div>
-        <h2 class="section-h2">Specialist counsel for<br />the cases <em>others refer.</em></h2>
+        <h2 class="section-h2">Where IWTA<br />adds <em>clarity.</em></h2>
       </div>
       <p class="services-desc">
-        IWTA handles the U.S. and international tax issues that arise at the intersection of cross-border wealth, foreign structures, and U.S. tax law — the precise matters that trust attorneys and fiduciaries need a dedicated specialist to resolve.
+        Cross-border wealth often creates U.S. tax questions that do not fit neatly inside a domestic estate plan, investment structure, or compliance file. IWTA focuses on the issues where international tax technical judgment is essential.
       </p>
     </div>
     <div class="bento-grid">
       <div class="bento-card bc-1 reveal">
         <div class="bento-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"
+            stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10" />
+            <path
+              d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
           </svg>
         </div>
         <div class="bento-num">01</div>
-        <div class="bento-title">Foreign Trusts, Estate &amp; Gift Tax</div>
-        <div class="bento-body">Strategic consulting on foreign trust structures, wealth transfer planning, and gift tax exposure for international families with U.S. connections. We work directly with trust counsel to resolve reporting obligations and structural weaknesses.</div>
+        <div class="bento-title">Foreign Trusts and Gifts</div>
+        <div class="bento-body">Form 3520, Form 3520-A, foreign trust classification, beneficiary reporting, and planning around foreign wealth transfers.</div>
         <div class="bento-tag-list">
-          <span class="bento-tag">Foreign Trusts</span>
           <span class="bento-tag">Form 3520</span>
-          <span class="bento-tag">Estate Planning</span>
+          <span class="bento-tag">Form 3520-A</span>
+          <span class="bento-tag">Trust Classification</span>
         </div>
       </div>
       <div class="bento-card bc-2 reveal reveal-delay-1">
         <div class="bento-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
           </svg>
         </div>
         <div class="bento-num">02</div>
-        <div class="bento-title">Pre-Immigration &amp; Expatriation Planning</div>
-        <div class="bento-body">For individuals planning to become U.S. taxpayers or terminate citizen and green card status. We model and mitigate the substantial tax consequences that arise from these transitions before they become irreversible.</div>
+        <div class="bento-title">Global Families with U.S. Connections</div>
+        <div class="bento-body">U.S. income, estate, gift, and information reporting issues for families with assets, residency, or beneficiaries across jurisdictions.</div>
         <div class="bento-tag-list">
-          <span class="bento-tag">Exit Tax</span>
-          <span class="bento-tag">Green Card</span>
-          <span class="bento-tag">Covered Expatriate</span>
+          <span class="bento-tag">Cross-Border Estates</span>
+          <span class="bento-tag">Gift Tax</span>
+          <span class="bento-tag">Information Reporting</span>
         </div>
       </div>
       <div class="bento-card bc-3 reveal">
         <div class="bento-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="3" width="20" height="18" rx="2"/><path d="M8 21V3M16 21V3M2 9h20M2 15h20"/>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"
+            stroke-linejoin="round">
+            <rect x="2" y="3" width="20" height="18" rx="2" />
+            <path d="M8 21V3M16 21V3M2 9h20M2 15h20" />
           </svg>
         </div>
         <div class="bento-num">03</div>
-        <div class="bento-title">U.S. Real Estate &amp; Foreign Investment</div>
-        <div class="bento-body">Tax planning for non-U.S. persons investing in U.S. real estate and business. FIRPTA analysis, treaty planning, and structuring for inbound investment to minimize U.S. tax exposure.</div>
+        <div class="bento-title">NRA and Inbound Planning</div>
+        <div class="bento-body">U.S. tax planning for nonresident aliens investing, doing business, or holding assets in the United States.</div>
         <div class="bento-tag-list">
-          <span class="bento-tag">FIRPTA</span>
+          <span class="bento-tag">NRA Planning</span>
           <span class="bento-tag">Inbound Investment</span>
           <span class="bento-tag">Treaty Planning</span>
         </div>
       </div>
       <div class="bento-card bc-4 reveal reveal-delay-1">
         <div class="bento-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+            <polyline points="14 2 14 8 20 8" />
+            <line x1="16" y1="13" x2="8" y2="13" />
+            <line x1="16" y1="17" x2="8" y2="17" />
+            <polyline points="10 9 9 9 8 9" />
           </svg>
         </div>
         <div class="bento-num">04</div>
-        <div class="bento-title">FBAR &amp; Foreign Asset Reporting</div>
-        <div class="bento-body">FBAR, FATCA Form 8938, and all foreign financial asset disclosure requirements. We build proactive compliance calendars so U.S. persons with foreign accounts and investments never face avoidable penalties.</div>
+        <div class="bento-title">FATCA and Foreign Asset Reporting</div>
+        <div class="bento-body">Form 8938, FBAR coordination, entity classification, and foreign financial account disclosure strategy.</div>
         <div class="bento-tag-list">
-          <span class="bento-tag">FBAR</span>
           <span class="bento-tag">Form 8938</span>
+          <span class="bento-tag">FBAR</span>
           <span class="bento-tag">FATCA</span>
         </div>
       </div>
       <div class="bento-card bc-5 reveal reveal-delay-2">
         <div class="bento-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"
+            stroke-linejoin="round">
+            <polyline points="23 4 23 10 17 10" />
+            <polyline points="1 20 1 14 7 14" />
+            <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15" />
           </svg>
         </div>
         <div class="bento-num">05</div>
-        <div class="bento-title">Voluntary Disclosure &amp; Back Compliance</div>
-        <div class="bento-body">For taxpayers who have fallen behind on U.S. tax filing or international disclosure obligations. We navigate IRS voluntary disclosure programs and streamlined procedures to restore compliance with minimal exposure.</div>
+        <div class="bento-title">Expatriation and Residency Transitions</div>
+        <div class="bento-body">U.S. tax considerations for individuals entering or exiting the U.S. tax system.</div>
         <div class="bento-tag-list">
-          <span class="bento-tag">IRS VDP</span>
-          <span class="bento-tag">Streamlined</span>
-          <span class="bento-tag">OVDP</span>
+          <span class="bento-tag">Exit Tax</span>
+          <span class="bento-tag">Covered Expatriate</span>
+          <span class="bento-tag">Pre-Immigration</span>
         </div>
       </div>
       <div class="bento-card bc-6 reveal">
@@ -1639,13 +1670,13 @@
             <div class="bc-6-label">Specialized Practice Areas</div>
           </div>
           <div>
-            <div class="bento-title">A practice built entirely around cross-border complexity.</div>
-            <p class="bc-6-body">From NRA tax planning and inbound business structuring to FATCA compliance and foreign trust reporting — every service IWTA offers exists because cross-border tax requires a specialist, not a generalist. Attorneys and fiduciaries refer to IWTA because the work requires it.</p>
+            <div class="bento-title">Advisor Support</div>
+            <p class="bc-6-body">Technical analysis and second-chair support for trust and estate counsel, fiduciaries, family offices, and private wealth teams navigating U.S. international tax questions within a broader matter.</p>
             <div class="bento-tag-list" style="margin-top: 1.25rem;">
-              <span class="bento-tag">NRA Planning</span>
-              <span class="bento-tag">Business Activities</span>
-              <span class="bento-tag">FATCA</span>
-              <span class="bento-tag">Foreign Trusts</span>
+              <span class="bento-tag">Second-Chair Support</span>
+              <span class="bento-tag">Technical Memos</span>
+              <span class="bento-tag">Attorney Referrals</span>
+              <span class="bento-tag">Family Offices</span>
             </div>
           </div>
         </div>
@@ -1657,42 +1688,29 @@
   <section class="process" id="process">
     <div class="process-grid reveal">
       <div>
-        <div class="section-tag">How We Work With Counsel</div>
-        <h2 class="section-h2">Rigour that attorneys<br />can <em>rely on.</em></h2>
+        <div class="section-tag">Our Approach</div>
+        <h2 class="section-h2">A specialist's approach to<br /><em>cross-border complexity.</em></h2>
+        <p class="team-sub" style="margin-top: 1.5rem; margin-bottom: 2rem;">IWTA is built for matters where precision matters. We identify the U.S. tax issue, map the reporting and planning consequences, and give advisors and families clear guidance they can rely on before decisions are made or filings are due.</p>
         <div class="process-steps">
           <div class="process-step">
             <span class="step-num">01</span>
             <div>
-              <div class="step-title">Initial Case Review</div>
-              <div class="step-body">We review the client's existing structures, residency history, asset classes, and filing history before forming any view. Referrals from counsel receive a confidential written summary of issues identified.</div>
+              <div class="step-title">Technical First</div>
+              <div class="step-body">Every recommendation begins with the governing tax rule, reporting obligation, and planning consequence.</div>
             </div>
           </div>
           <div class="process-step">
             <span class="step-num">02</span>
             <div>
-              <div class="step-title">Issue Identification &amp; Scoping</div>
-              <div class="step-body">We isolate the specific U.S. tax exposure — FBAR gaps, foreign trust reporting failures, exit tax risk, or inbound structuring issues — and provide counsel with a clear written scope of work before engagement begins.</div>
+              <div class="step-title">Advisor Aligned</div>
+              <div class="step-body">We work alongside attorneys, fiduciaries, and family offices without disrupting trusted client relationships.</div>
             </div>
           </div>
           <div class="process-step">
             <span class="step-num">03</span>
             <div>
-              <div class="step-title">Technical Analysis &amp; Recommendation</div>
-              <div class="step-body">Our written analysis sets out the legal basis, quantified exposure, and recommended resolution path. We present options with trade-offs — not a single view dressed as advice.</div>
-            </div>
-          </div>
-          <div class="process-step">
-            <span class="step-num">04</span>
-            <div>
-              <div class="step-title">Implementation &amp; Filing</div>
-              <div class="step-body">We prepare and file all required returns, disclosures, and compliance documents. Where voluntary disclosure is required, we manage the IRS process from submission through resolution.</div>
-            </div>
-          </div>
-          <div class="process-step">
-            <span class="step-num">05</span>
-            <div>
-              <div class="step-title">Ongoing Advisory Relationship</div>
-              <div class="step-body">Many attorney referrals become standing relationships. We serve as the retained international tax resource for firms that regularly encounter cross-border matters — available when the next complex case arrives.</div>
+              <div class="step-title">Clear and Practical</div>
+              <div class="step-body">Complex analysis is translated into direct guidance, next steps, and documentation that supports the file.</div>
             </div>
           </div>
         </div>
@@ -1701,32 +1719,46 @@
         <div class="process-visual reveal reveal-delay-2">
           <div class="pv-title">Practice Jurisdictions</div>
           <div class="pv-jurisdiction">
-            <div class="pv-country"><div class="flag">🇺🇸</div>United States</div>
+            <div class="pv-country">
+              <div class="flag">🇺🇸</div>United States
+            </div>
             <span class="pv-status status-active">Primary Practice</span>
           </div>
           <div class="pv-jurisdiction">
-            <div class="pv-country"><div class="flag">🇨🇭</div>Switzerland</div>
+            <div class="pv-country">
+              <div class="flag">🇨🇭</div>Switzerland
+            </div>
             <span class="pv-status status-advisory">Advisory Network</span>
           </div>
           <div class="pv-jurisdiction">
-            <div class="pv-country"><div class="flag">🇬🇧</div>United Kingdom</div>
+            <div class="pv-country">
+              <div class="flag">🇬🇧</div>United Kingdom
+            </div>
             <span class="pv-status status-advisory">Advisory Network</span>
           </div>
           <div class="pv-jurisdiction">
-            <div class="pv-country"><div class="flag">🇰🇾</div>Cayman Islands</div>
+            <div class="pv-country">
+              <div class="flag">🇰🇾</div>Cayman Islands
+            </div>
             <span class="pv-status status-advisory">Advisory Network</span>
           </div>
           <div class="pv-jurisdiction">
-            <div class="pv-country"><div class="flag">🇸🇬</div>Singapore</div>
+            <div class="pv-country">
+              <div class="flag">🇸🇬</div>Singapore
+            </div>
             <span class="pv-status status-advisory">Advisory Network</span>
           </div>
           <div class="pv-jurisdiction">
-            <div class="pv-country"><div class="flag">🇦🇪</div>UAE</div>
+            <div class="pv-country">
+              <div class="flag">🇦🇪</div>UAE
+            </div>
             <span class="pv-status status-advisory">Advisory Network</span>
           </div>
           <div class="coverage-bar">
             <div class="coverage-label">Cross-Border Case Coverage</div>
-            <div class="coverage-track"><div class="coverage-fill"></div></div>
+            <div class="coverage-track">
+              <div class="coverage-fill"></div>
+            </div>
             <div style="display:flex; justify-content:space-between; margin-top: 0.5rem;">
               <span style="font-size:0.7rem; color: var(--muted);">78 of 100 major networks</span>
               <span style="font-size:0.7rem; color: var(--gold);">78%</span>
@@ -1737,39 +1769,84 @@
     </div>
   </section>
 
+  <!-- ─── WHO WE SERVE ────────────────────────────────── -->
+  <section class="team" id="who-we-serve" style="background: var(--color-ice-blue);">
+    <div class="team-header reveal">
+      <div>
+        <div class="section-tag">Who We Serve</div>
+        <h2 class="section-h2">Built for global families and<br />the <em>advisors around them.</em></h2>
+      </div>
+      <p class="team-sub">
+        IWTA serves families whose lives, assets, citizenship, residency, and structures cross borders. We also support the professional advisors who need U.S. international tax input before implementing a plan, accepting a fiduciary role, or advising on a structure.
+      </p>
+    </div>
+    <div class="reveal" style="display: flex; flex-direction: column; gap: 1rem; max-width: 680px;">
+      <div class="office" style="gap: 1.25rem;">
+        <div style="width: 8px; height: 8px; background: var(--color-gold); border-radius: 50%; margin-top: 0.35rem; flex-shrink: 0;"></div>
+        <div style="font-size: 0.95rem; color: var(--color-slate);">Global families with U.S. beneficiaries, assets, or reporting obligations</div>
+      </div>
+      <div class="office" style="gap: 1.25rem;">
+        <div style="width: 8px; height: 8px; background: var(--color-gold); border-radius: 50%; margin-top: 0.35rem; flex-shrink: 0;"></div>
+        <div style="font-size: 0.95rem; color: var(--color-slate);">Trust and estate attorneys advising international clients</div>
+      </div>
+      <div class="office" style="gap: 1.25rem;">
+        <div style="width: 8px; height: 8px; background: var(--color-gold); border-radius: 50%; margin-top: 0.35rem; flex-shrink: 0;"></div>
+        <div style="font-size: 0.95rem; color: var(--color-slate);">Fiduciaries administering foreign or cross-border structures</div>
+      </div>
+      <div class="office" style="gap: 1.25rem;">
+        <div style="width: 8px; height: 8px; background: var(--color-gold); border-radius: 50%; margin-top: 0.35rem; flex-shrink: 0;"></div>
+        <div style="font-size: 0.95rem; color: var(--color-slate);">Family offices coordinating multi-jurisdictional planning</div>
+      </div>
+      <div class="office" style="gap: 1.25rem;">
+        <div style="width: 8px; height: 8px; background: var(--color-gold); border-radius: 50%; margin-top: 0.35rem; flex-shrink: 0;"></div>
+        <div style="font-size: 0.95rem; color: var(--color-slate);">Private wealth advisors managing internationally connected clients</div>
+      </div>
+    </div>
+  </section>
+
   <!-- ─── INSIGHTS ──────────────────────────────────── -->
   <section class="insights" id="insights">
     <div class="insights-header reveal">
       <div>
         <div class="section-tag">IWTA Perspectives</div>
-        <h2 class="section-h2">Technical insight for<br />counsel and <em>advisors.</em></h2>
+        <h2 class="section-h2">Insights for cross-border<br /><em>private client planning.</em></h2>
       </div>
-      <a href="#" class="btn-ghost">View All Insights →</a>
+      <div style="max-width: 52ch;">
+        <p style="font-size: 0.95rem; color: var(--muted); line-height: 1.8;">IWTA publishes practical analysis on the U.S. tax issues that most often affect global families, fiduciaries, and private client advisors.</p>
+      </div>
     </div>
     <div class="insights-grid reveal">
       <a href="#" class="insight-card featured">
         <div class="insight-meta">
-          <span class="insight-cat">Foreign Trusts</span>
+          <span class="insight-cat">Foreign Trust Reporting</span>
           <span class="insight-date">May 2026</span>
         </div>
-        <div class="insight-title">Form 3520 Penalties and the Case for Proactive Disclosure: What Trust Attorneys Need to Know in 2026</div>
+        <div class="insight-title">Form 3520 Penalties and the Case for Proactive Disclosure: What Trust Attorneys Need
+          to Know in 2026</div>
         <div class="insight-footer">
           <span class="insight-author">Jack Brister, Principal</span>
           <div class="insight-arrow">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--muted)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--muted)" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
           </div>
         </div>
       </a>
       <a href="#" class="insight-card">
         <div class="insight-meta">
-          <span class="insight-cat">Expatriation</span>
+          <span class="insight-cat">Expatriation &amp; Residency</span>
           <span class="insight-date">Apr 2026</span>
         </div>
-        <div class="insight-title">The Covered Expatriate Test: Why Pre-Immigration Planning Matters More Than Most Clients Realize</div>
+        <div class="insight-title">The Covered Expatriate Test: Why Pre-Immigration Planning Matters More Than Most
+          Clients Realize</div>
         <div class="insight-footer">
           <span class="insight-author">IWTA Advisory Team</span>
           <div class="insight-arrow">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--muted)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--muted)" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
           </div>
         </div>
       </a>
@@ -1778,11 +1855,15 @@
           <span class="insight-cat">FBAR</span>
           <span class="insight-date">Mar 2026</span>
         </div>
-        <div class="insight-title">Willful vs. Non-Willful FBAR Violations: How Courts Are Shifting the Standard in 2026</div>
+        <div class="insight-title">Willful vs. Non-Willful FBAR Violations: How Courts Are Shifting the Standard in 2026
+        </div>
         <div class="insight-footer">
           <span class="insight-author">IWTA Advisory Team</span>
           <div class="insight-arrow">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--muted)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--muted)" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
           </div>
         </div>
       </a>
@@ -1794,10 +1875,10 @@
     <div class="team-header reveal">
       <div>
         <div class="section-tag">Our People</div>
-        <h2 class="section-h2">Led by a specialist<br />the profession <em>trusts.</em></h2>
+        <h2 class="section-h2">Senior-level judgment<br />on <em>every matter.</em></h2>
       </div>
       <p class="team-sub">
-        Jack Brister founded International Wealth Tax Advisors on a single conviction: that U.S. cross-border tax work demands a dedicated specialist. Every engagement is personally overseen by a senior advisor with deep technical authority in the specific issue at hand.
+        IWTA was founded by Jack Brister to give global families and their advisors direct access to focused U.S. international tax counsel. Every engagement is overseen by a senior advisor with experience in the technical issues that drive cross-border private client planning.
       </p>
     </div>
     <div class="team-grid reveal">
@@ -1865,91 +1946,107 @@
     <div style="overflow: hidden; margin: 0 -4rem;">
       <div class="testimonials-track">
         <div class="testimonial-card">
-          <div class="testimonial-quote">Jack Brister is the first call I make when a trust client has foreign reporting exposure. The technical depth and turnaround are consistently exceptional.</div>
+          <div class="testimonial-quote">Jack Brister is the first call I make when a trust client has foreign reporting
+            exposure. The technical depth and turnaround are consistently exceptional.</div>
           <div class="testimonial-author">
             <div class="author-avatar">T</div>
             <div>
               <div class="author-name">Trust &amp; Estate Partner</div>
               <div class="author-title">AmLaw 100 Firm, New York</div>
-              <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+              <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span
+                  class="star">★</span><span class="star">★</span></div>
             </div>
           </div>
         </div>
         <div class="testimonial-card">
-          <div class="testimonial-quote">We refer our most complex pre-immigration matters to IWTA. The analysis is precise, the communication is clear, and our clients are always in good hands.</div>
+          <div class="testimonial-quote">We refer our most complex pre-immigration matters to IWTA. The analysis is
+            precise, the communication is clear, and our clients are always in good hands.</div>
           <div class="testimonial-author">
             <div class="author-avatar">P</div>
             <div>
               <div class="author-name">Private Wealth Attorney</div>
               <div class="author-title">Boutique Wealth Practice, Miami</div>
-              <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+              <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span
+                  class="star">★</span><span class="star">★</span></div>
             </div>
           </div>
         </div>
         <div class="testimonial-card">
-          <div class="testimonial-quote">IWTA handled a voluntary disclosure matter for a client with significant foreign asset exposure. The outcome was far better than we had modelled. Exceptional work.</div>
+          <div class="testimonial-quote">IWTA handled a voluntary disclosure matter for a client with significant
+            foreign asset exposure. The outcome was far better than we had modelled. Exceptional work.</div>
           <div class="testimonial-author">
             <div class="author-avatar">S</div>
             <div>
               <div class="author-name">Senior Fiduciary</div>
               <div class="author-title">Multi-Family Office, Chicago</div>
-              <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+              <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span
+                  class="star">★</span><span class="star">★</span></div>
             </div>
           </div>
         </div>
         <div class="testimonial-card">
-          <div class="testimonial-quote">What distinguishes IWTA is that Jack Brister understands how attorneys think. The written analysis is thorough, defensible, and delivered on time.</div>
+          <div class="testimonial-quote">What distinguishes IWTA is that Jack Brister understands how attorneys think.
+            The written analysis is thorough, defensible, and delivered on time.</div>
           <div class="testimonial-author">
             <div class="author-avatar">E</div>
             <div>
               <div class="author-name">Estate Planning Counsel</div>
               <div class="author-title">Regional Wealth Practice, Dallas</div>
-              <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+              <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span
+                  class="star">★</span><span class="star">★</span></div>
             </div>
           </div>
         </div>
         <!-- duplicate for seamless loop -->
         <div class="testimonial-card">
-          <div class="testimonial-quote">Jack Brister is the first call I make when a trust client has foreign reporting exposure. The technical depth and turnaround are consistently exceptional.</div>
+          <div class="testimonial-quote">Jack Brister is the first call I make when a trust client has foreign reporting
+            exposure. The technical depth and turnaround are consistently exceptional.</div>
           <div class="testimonial-author">
             <div class="author-avatar">T</div>
             <div>
               <div class="author-name">Trust &amp; Estate Partner</div>
               <div class="author-title">AmLaw 100 Firm, New York</div>
-              <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+              <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span
+                  class="star">★</span><span class="star">★</span></div>
             </div>
           </div>
         </div>
         <div class="testimonial-card">
-          <div class="testimonial-quote">We refer our most complex pre-immigration matters to IWTA. The analysis is precise, the communication is clear, and our clients are always in good hands.</div>
+          <div class="testimonial-quote">We refer our most complex pre-immigration matters to IWTA. The analysis is
+            precise, the communication is clear, and our clients are always in good hands.</div>
           <div class="testimonial-author">
             <div class="author-avatar">P</div>
             <div>
               <div class="author-name">Private Wealth Attorney</div>
               <div class="author-title">Boutique Wealth Practice, Miami</div>
-              <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+              <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span
+                  class="star">★</span><span class="star">★</span></div>
             </div>
           </div>
         </div>
         <div class="testimonial-card">
-          <div class="testimonial-quote">IWTA handled a voluntary disclosure matter for a client with significant foreign asset exposure. The outcome was far better than we had modelled. Exceptional work.</div>
+          <div class="testimonial-quote">IWTA handled a voluntary disclosure matter for a client with significant
+            foreign asset exposure. The outcome was far better than we had modelled. Exceptional work.</div>
           <div class="testimonial-author">
             <div class="author-avatar">S</div>
             <div>
               <div class="author-name">Senior Fiduciary</div>
               <div class="author-title">Multi-Family Office, Chicago</div>
-              <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+              <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span
+                  class="star">★</span><span class="star">★</span></div>
             </div>
           </div>
         </div>
         <div class="testimonial-card">
-          <div class="testimonial-quote">What distinguishes IWTA is that Jack Brister understands how attorneys think. The written analysis is thorough, defensible, and delivered on time.</div>
+          <div class="testimonial-quote">What distinguishes IWTA is that Jack Brister understands how attorneys think.
+            The written analysis is thorough, defensible, and delivered on time.</div>
           <div class="testimonial-author">
             <div class="author-avatar">E</div>
             <div>
               <div class="author-name">Estate Planning Counsel</div>
               <div class="author-title">Regional Wealth Practice, Dallas</div>
-              <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+              <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span
+                  class="star">★</span><span class="star">★</span></div>
             </div>
           </div>
         </div>
@@ -1962,9 +2059,9 @@
     <div class="contact-inner">
       <div class="contact-left reveal">
         <div class="section-tag">Work With Us</div>
-        <h2 class="section-h2">Complex matters deserve<br />a direct <em>conversation.</em></h2>
+        <h2 class="section-h2">Have a cross-border<br />U.S. tax <em>question?</em></h2>
         <p class="contact-desc">
-          We accept referrals from attorneys, fiduciaries, and professional advisors on a confidential basis. Initial consultations are obligation-free. We will tell you plainly whether we can add value.
+          We accept confidential referrals from attorneys, fiduciaries, family offices, and professional advisors. If IWTA can help, we will explain how. If another resource is better suited, we will say so plainly.
         </p>
         <div class="contact-offices">
           <div class="office">
@@ -2038,9 +2135,10 @@
         </div>
         <div class="form-field">
           <label class="form-label">Brief Context</label>
-          <textarea class="form-textarea" placeholder="Please describe the matter briefly. All enquiries are treated as confidential."></textarea>
+          <textarea class="form-textarea"
+            placeholder="Please describe the matter briefly. All enquiries are treated as confidential."></textarea>
         </div>
-        <button class="form-submit">Submit Referral</button>
+        <button class="form-submit">Schedule a Confidential Consultation</button>
       </div>
     </div>
   </section>
@@ -2049,8 +2147,10 @@
   <footer>
     <div class="footer-top">
       <div class="footer-brand">
-        <img src="iwta-logo-white.png" alt="International Wealth Tax Advisors" style="height: 36px; width: auto; opacity: 0.9; margin-bottom: 1rem;" />
-        <p class="footer-tagline">U.S. and international tax advisory for attorneys, fiduciaries, and family offices managing clients with cross-border complexity. Based in New York. Referred nationwide.</p>
+        <img src="iwta-logo-white.png" alt="International Wealth Tax Advisors"
+          style="height: 36px; width: auto; opacity: 0.9; margin-bottom: 1rem;" />
+        <p class="footer-tagline">U.S. and international tax advisory for attorneys, fiduciaries, and family offices
+          managing clients with cross-border complexity. Based in New York. Referred nationwide.</p>
       </div>
       <div>
         <div class="footer-col-title">Services</div>
