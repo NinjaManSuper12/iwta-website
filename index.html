@@ -492,18 +492,25 @@
     }
 
     .services-header {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: end;
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
       margin-bottom: 3.5rem;
     }
 
+    .services-connector {
+      flex: 0 0 auto;
+      width: 80px;
+      height: 1px;
+      background: linear-gradient(to right, var(--color-gold) 0%, rgba(201,168,76,0.15) 100%);
+    }
+
     .services-desc {
-      font-size: 1.1rem;
+      font-size: 1.25rem;
       color: var(--muted);
       line-height: 1.8;
-      max-width: 42ch;
+      max-width: 44ch;
+      flex: 1;
     }
 
     .bento-grid {
@@ -1572,6 +1579,7 @@
         <div class="section-tag">Our Practice Areas</div>
         <h2 class="section-h2">Where IWTA<br />adds <em>clarity.</em></h2>
       </div>
+      <div class="services-connector"></div>
       <p class="services-desc">
         Cross-border wealth often creates U.S. tax questions that do not fit neatly inside an international estate plan, investment structure, or compliance file. IWTA focuses on the issues where international tax technical judgment is essential.
       </p>
