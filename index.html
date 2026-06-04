@@ -417,9 +417,9 @@
 
     .section-h2 {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(3.5rem, 6vw, 7rem);
+      font-size: clamp(2.6rem, 3.8vw, 5rem);
       font-weight: 400;
-      line-height: 1.08;
+      line-height: 1.1;
       letter-spacing: -0.02em;
       color: var(--color-navy-deep);
     }
@@ -491,26 +491,32 @@
       background: var(--bg);
     }
 
-    .services-header {
+    .services-header,
+    .insights-header,
+    .team-header {
       display: flex;
       align-items: center;
       gap: 3rem;
       margin-bottom: 4rem;
     }
 
-    .services-connector {
-      flex: 0 0 auto;
-      width: 60px;
+    .section-connector {
+      flex: 0 0 60px;
       height: 2px;
-      background: linear-gradient(to right, var(--color-gold), rgba(201,168,76,0.2));
+      background: linear-gradient(to right, var(--color-gold), rgba(201,168,76,0.15));
       align-self: center;
     }
 
-    .services-desc {
-      font-size: clamp(1.25rem, 2vw, 2rem);
+    /* keep legacy alias */
+    .services-connector { flex: 0 0 60px; height: 2px; background: linear-gradient(to right, var(--color-gold), rgba(201,168,76,0.15)); align-self: center; }
+
+    .section-desc,
+    .services-desc,
+    .team-sub {
+      font-size: clamp(1rem, 1.4vw, 1.4rem);
       color: var(--muted);
-      line-height: 1.75;
-      max-width: 36ch;
+      line-height: 1.8;
+      max-width: 44ch;
       flex: 1;
       align-self: center;
     }
@@ -824,12 +830,7 @@
       background: var(--bg);
     }
 
-    .insights-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      margin-bottom: 4rem;
-    }
+    /* insights-header inherits from combined rule above */
 
     .insights-grid {
       display: grid;
@@ -933,19 +934,7 @@
       border-top: 1px solid var(--color-silver);
     }
 
-    .team-header {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: end;
-      margin-bottom: 4rem;
-    }
-
-    .team-sub {
-      font-size: 1.1rem;
-      color: var(--muted);
-      line-height: 1.8;
-    }
+    /* team-header and team-sub inherit from combined rules above */
 
     .team-grid {
       display: grid;
@@ -1147,7 +1136,7 @@
     }
 
     .contact-desc {
-      font-size: 1.1rem;
+      font-size: clamp(1rem, 1.4vw, 1.4rem);
       color: var(--muted);
       line-height: 1.8;
       margin-bottom: 3rem;
@@ -1699,7 +1688,8 @@
       <div>
         <div class="section-tag">Our Approach</div>
         <h2 class="section-h2">A specialist's approach to<br /><em>cross-border complexity.</em></h2>
-        <p class="team-sub" style="margin-top: 1.5rem; margin-bottom: 2rem;">IWTA is built for matters where precision matters. We identify the U.S. tax issue, map the reporting and planning consequences, and give advisors and families clear guidance they can rely on before decisions are made or filings are due.</p>
+        <div class="section-connector" style="margin: 1.5rem 0; width: 60px;"></div>
+        <p class="team-sub" style="margin-bottom: 2rem; max-width: 100%; flex: none;">IWTA is built for matters where precision matters. We identify the U.S. tax issue, map the reporting and planning consequences, and give advisors and families clear guidance they can rely on before decisions are made or filings are due.</p>
         <div class="process-steps">
           <div class="process-step">
             <span class="step-num">01</span>
@@ -1791,9 +1781,8 @@
         <div class="section-tag">Who We Serve</div>
         <h2 class="section-h2">Built for global families and<br />the <em>advisors around them.</em></h2>
       </div>
-      <p class="team-sub">
-        IWTA serves families whose lives, assets, citizenship, residency, and structures cross borders. We also support the professional advisors who need U.S. international tax input before implementing a plan, accepting a fiduciary role, or advising on a structure.
-      </p>
+      <div class="section-connector"></div>
+      <p class="team-sub">IWTA serves families whose lives, assets, citizenship, residency, and structures cross borders. We also support the professional advisors who need U.S. international tax input before implementing a plan, accepting a fiduciary role, or advising on a structure.</p>
     </div>
     <div class="reveal" style="display: flex; flex-direction: column; gap: 1rem; max-width: 680px;">
       <div class="office" style="gap: 1.25rem;">
@@ -1826,9 +1815,8 @@
         <div class="section-tag">IWTA Perspectives</div>
         <h2 class="section-h2">Insights for cross-border<br /><em>private client planning.</em></h2>
       </div>
-      <div style="max-width: 52ch;">
-        <p style="font-size: 0.95rem; color: var(--muted); line-height: 1.8;">IWTA publishes practical analysis on the U.S. tax issues that most often affect global families, fiduciaries, and private client advisors.</p>
-      </div>
+      <div class="section-connector"></div>
+      <p class="section-desc">IWTA publishes practical analysis on the U.S. tax issues that most often affect global families, fiduciaries, and private client advisors.</p>
     </div>
     <div class="insights-grid reveal">
       <a href="#" class="insight-card featured">
@@ -1892,9 +1880,8 @@
         <div class="section-tag">Our People</div>
         <h2 class="section-h2">Senior-level judgment<br />on <em>every matter.</em></h2>
       </div>
-      <p class="team-sub">
-        IWTA was founded by Jack Brister to give global families and their advisors direct access to focused U.S. international tax counsel. Every engagement is overseen by a senior advisor with experience in the technical issues that drive cross-border private client planning.
-      </p>
+      <div class="section-connector"></div>
+      <p class="team-sub">IWTA was founded by Jack Brister to give global families and their advisors direct access to focused U.S. international tax counsel. Every engagement is overseen by a senior advisor with experience in the technical issues that drive cross-border private client planning.</p>
     </div>
     <div class="team-grid reveal">
       <div class="team-card">
@@ -2075,6 +2062,7 @@
       <div class="contact-left reveal">
         <div class="section-tag">Work With Us</div>
         <h2 class="section-h2">Have a cross-border<br />U.S. tax <em>question?</em></h2>
+        <div class="section-connector" style="margin: 1.5rem 0; width: 60px;"></div>
         <p class="contact-desc">
           We accept confidential referrals from attorneys, fiduciaries, family offices, and professional advisors. If IWTA can help, we will explain how. If another resource is better suited, we will say so plainly.
         </p>
