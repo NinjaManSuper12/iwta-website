@@ -417,9 +417,9 @@
 
     .section-h2 {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(3rem, 4.5vw, 5rem);
+      font-size: clamp(3.5rem, 6vw, 7rem);
       font-weight: 400;
-      line-height: 1.1;
+      line-height: 1.08;
       letter-spacing: -0.02em;
       color: var(--color-navy-deep);
     }
@@ -494,23 +494,25 @@
     .services-header {
       display: flex;
       align-items: center;
-      gap: 2.5rem;
-      margin-bottom: 3.5rem;
+      gap: 3rem;
+      margin-bottom: 4rem;
     }
 
     .services-connector {
       flex: 0 0 auto;
-      width: 80px;
-      height: 1px;
-      background: linear-gradient(to right, var(--color-gold) 0%, rgba(201,168,76,0.15) 100%);
+      width: 60px;
+      height: 2px;
+      background: linear-gradient(to right, var(--color-gold), rgba(201,168,76,0.2));
+      align-self: center;
     }
 
     .services-desc {
-      font-size: 1.25rem;
+      font-size: clamp(1.25rem, 2vw, 2rem);
       color: var(--muted);
-      line-height: 1.8;
-      max-width: 44ch;
+      line-height: 1.75;
+      max-width: 36ch;
       flex: 1;
+      align-self: center;
     }
 
     .bento-grid {
