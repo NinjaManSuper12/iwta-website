@@ -1029,6 +1029,84 @@
       border-radius: 2rem;
     }
 
+    /* ─── FOUNDER ───────────────────────────────────── */
+    .founder-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 5rem;
+      align-items: start;
+      margin-bottom: 5rem;
+    }
+
+    .founder-photo {
+      border-radius: 1.5rem;
+      overflow: hidden;
+      aspect-ratio: 3 / 4;
+      position: sticky;
+      top: 8rem;
+    }
+
+    .founder-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    .founder-name {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 3vw, 3.5rem);
+      font-weight: 400;
+      color: var(--color-navy-deep);
+      letter-spacing: -0.02em;
+      margin-bottom: 0.4rem;
+    }
+
+    .founder-role {
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 2rem;
+    }
+
+    .founder-divider {
+      width: 40px;
+      height: 2px;
+      background: linear-gradient(to right, var(--color-gold), rgba(201,168,76,0.2));
+      margin-bottom: 2rem;
+    }
+
+    .founder-body {
+      font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+      color: var(--muted);
+      line-height: 1.85;
+      margin-bottom: 1.5rem;
+    }
+
+    .how-we-work {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.5rem;
+      padding-top: 4rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .pillar-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-weight: 400;
+      color: var(--color-navy-deep);
+      margin-bottom: 0.75rem;
+    }
+
+    .pillar-body {
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
     /* ─── TESTIMONIALS ───────────────────────────────── */
     .testimonials {
       background: var(--bg);
@@ -1879,66 +1957,47 @@
 
   <!-- ─── TEAM ──────────────────────────────────────── -->
   <section class="team" id="team">
+    <div class="section-tag reveal">Founder &amp; Team</div>
     <div class="team-header reveal">
       <div>
-        <div class="section-tag">Our People</div>
-        <h2 class="section-h2">Senior-level judgment<br />on <em>every matter.</em></h2>
+        <h2 class="section-h2">Senior U.S. international tax<br />judgment for global families<br />and their <em>advisors.</em></h2>
       </div>
       <div class="section-connector"></div>
-      <p class="team-sub">IWTA was founded by Jack Brister to give global families and their advisors direct access to focused U.S. international tax counsel. Every engagement is overseen by a senior advisor with experience in the technical issues that drive cross-border private client planning.</p>
+      <p class="team-sub">IWTA is built around direct access to experienced U.S. international tax counsel. We advise global families, fiduciaries, family offices, attorneys, and private client advisors on the U.S. tax issues that arise when lives, assets, trusts, entities, and reporting obligations cross borders.</p>
     </div>
-    <div class="team-grid reveal">
-      <div class="team-card">
-        <div class="team-portrait">
-          <div class="portrait-lines"></div>
-          <div class="portrait-initials">JB</div>
-        </div>
-        <div class="team-info">
-          <div class="team-name">Jack Brister</div>
-          <div class="team-role">Founder &amp; Principal Advisor</div>
-          <div class="team-jurisdictions">
-            <span class="tj">Foreign Trusts</span><span class="tj">Cross-Border Tax</span><span class="tj">FBAR</span>
-          </div>
+
+    <div class="founder-grid reveal">
+      <div class="founder-photo">
+        <img src="jack-brister.jpeg" alt="Jack Brister — Founder & Principal, IWTA" />
+      </div>
+      <div>
+        <div class="founder-name">Jack Brister</div>
+        <div class="founder-role">Founder &amp; Principal</div>
+        <div class="founder-divider"></div>
+        <p class="founder-body">Jack Brister is the Founder and Principal of IWTA, a U.S. international tax advisory firm focused on global families, fiduciaries, and the private client professionals who serve them. His work centers on complex cross-border tax issues, including foreign trusts, U.S. reporting obligations, inbound planning, expatriation, and the U.S. tax consequences of international wealth structures.</p>
+        <p class="founder-body">Jack advises clients and collaborating professionals with a technical, practical, and confidential approach. He is often engaged where U.S. tax rules intersect with foreign trusts, non-U.S. family wealth, global mobility, and multi-jurisdictional planning.</p>
+        <div class="bento-tag-list" style="margin-top: 2rem;">
+          <span class="bento-tag">Foreign Trusts</span>
+          <span class="bento-tag">Cross-Border Tax</span>
+          <span class="bento-tag">Inbound Planning</span>
+          <span class="bento-tag">Expatriation</span>
+          <span class="bento-tag">FBAR &amp; Reporting</span>
         </div>
       </div>
-      <div class="team-card">
-        <div class="team-portrait">
-          <div class="portrait-lines"></div>
-          <div class="portrait-initials">TBA</div>
-        </div>
-        <div class="team-info">
-          <div class="team-name">Senior Tax Advisor</div>
-          <div class="team-role">International Tax Counsel</div>
-          <div class="team-jurisdictions">
-            <span class="tj">Pre-Immigration</span><span class="tj">NRA Planning</span><span class="tj">Expat Tax</span>
-          </div>
-        </div>
+    </div>
+
+    <div class="how-we-work reveal">
+      <div>
+        <div class="pillar-title">Technical Precision</div>
+        <p class="pillar-body">We begin with the governing U.S. tax rules, reporting obligations, and planning consequences. Our goal is to provide analysis that is accurate, supportable, and useful to the advisor or family making the decision.</p>
       </div>
-      <div class="team-card">
-        <div class="team-portrait">
-          <div class="portrait-lines"></div>
-          <div class="portrait-initials">TBA</div>
-        </div>
-        <div class="team-info">
-          <div class="team-name">Estate &amp; Trust Specialist</div>
-          <div class="team-role">Trust &amp; Estate Tax</div>
-          <div class="team-jurisdictions">
-            <span class="tj">Foreign Estates</span><span class="tj">Gift Tax</span><span class="tj">Form 3520</span>
-          </div>
-        </div>
+      <div>
+        <div class="pillar-title">Advisor Alignment</div>
+        <p class="pillar-body">We work alongside attorneys, fiduciaries, family offices, and private client advisors. Our role is to clarify the U.S. tax issues while respecting existing client relationships and professional responsibilities.</p>
       </div>
-      <div class="team-card">
-        <div class="team-portrait">
-          <div class="portrait-lines"></div>
-          <div class="portrait-initials">TBA</div>
-        </div>
-        <div class="team-info">
-          <div class="team-name">Compliance Lead</div>
-          <div class="team-role">FATCA &amp; Reporting</div>
-          <div class="team-jurisdictions">
-            <span class="tj">FATCA</span><span class="tj">FBAR</span><span class="tj">Voluntary Disclosure</span>
-          </div>
-        </div>
+      <div>
+        <div class="pillar-title">Practical Clarity</div>
+        <p class="pillar-body">Complex rules are translated into clear guidance, next steps, and documentation. We focus on what the client and advisory team need to know, decide, and do.</p>
       </div>
     </div>
   </section>
