@@ -1313,6 +1313,14 @@
       background: var(--bg);
       border: 1px solid var(--border);
       border-radius: 1rem;
+      transition: border-color 0.4s, transform 0.4s var(--ease), box-shadow 0.4s;
+      cursor: default;
+    }
+
+    .office:hover {
+      border-color: rgba(46, 84, 151, 0.3);
+      transform: translateY(-3px);
+      box-shadow: 0 16px 40px rgba(13, 37, 69, 0.1);
     }
 
     .office-flag {
