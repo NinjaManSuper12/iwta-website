@@ -1083,6 +1083,79 @@
       margin-bottom: 1.5rem;
     }
 
+    .quotes-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin: 4rem 0;
+    }
+
+    .quote-card {
+      background: var(--color-ice-blue);
+      border: 1px solid var(--border);
+      border-radius: 1.5rem;
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .quote-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-style: italic;
+      color: var(--color-navy-deep);
+      line-height: 1.7;
+    }
+
+    .quote-text::before {
+      content: '\201C';
+      color: var(--gold);
+      font-size: 1.4rem;
+      margin-right: 0.1em;
+    }
+
+    .quote-author {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+
+    .quote-avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--color-navy-brand);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 0.85rem;
+      color: var(--color-off-white);
+      flex-shrink: 0;
+    }
+
+    .quote-name {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--color-navy-deep);
+    }
+
+    .quote-firm {
+      font-size: 0.72rem;
+      color: var(--muted);
+      margin-top: 0.15rem;
+    }
+
+    .quote-stars {
+      display: flex;
+      gap: 2px;
+      margin-top: 0.25rem;
+    }
+
+    .quote-stars span { color: var(--gold); font-size: 0.65rem; }
+
     .how-we-work {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -1974,6 +2047,42 @@
       </div>
     </div>
 
+    <div class="quotes-grid reveal">
+      <div class="quote-card">
+        <div class="quote-text">Jack Brister is the first call I make when a trust client has foreign reporting exposure. The technical depth and turnaround are consistently exceptional.</div>
+        <div class="quote-author">
+          <div class="quote-avatar">T</div>
+          <div>
+            <div class="quote-name">Trust &amp; Estate Partner</div>
+            <div class="quote-firm">AmLaw 100 Firm, New York</div>
+            <div class="quote-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="quote-card">
+        <div class="quote-text">We refer our most complex pre-immigration matters to IWTA. The analysis is precise, the communication is clear, and our clients are always in good hands.</div>
+        <div class="quote-author">
+          <div class="quote-avatar">P</div>
+          <div>
+            <div class="quote-name">Private Wealth Attorney</div>
+            <div class="quote-firm">Boutique Wealth Practice, Miami</div>
+            <div class="quote-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="quote-card">
+        <div class="quote-text">IWTA handled a voluntary disclosure matter for a client with significant foreign asset exposure. The outcome was far better than we had modelled. Exceptional work.</div>
+        <div class="quote-author">
+          <div class="quote-avatar">S</div>
+          <div>
+            <div class="quote-name">Senior Fiduciary</div>
+            <div class="quote-firm">Multi-Family Office, Chicago</div>
+            <div class="quote-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="how-we-work reveal">
       <div>
         <div class="pillar-title">Technical Precision</div>
@@ -1990,123 +2099,6 @@
     </div>
   </section>
 
-  <!-- TESTIMONIALS SECTION — hidden, preserved for future use. To re-enable: remove this opening comment tag and the closing one below.
-  <section class="testimonials">
-    <div class="testimonials-header reveal">
-      <div class="section-tag">From the Professionals We Serve</div>
-      <h2 class="section-h2">Trusted by counsel<br />across <em>practice areas.</em></h2>
-    </div>
-    <div style="overflow: hidden; margin: 0 -4rem;">
-      <div class="testimonials-track">
-        <div class="testimonial-card">
-          <div class="testimonial-quote">Jack Brister is the first call I make when a trust client has foreign reporting
-            exposure. The technical depth and turnaround are consistently exceptional.</div>
-          <div class="testimonial-author">
-            <div class="author-avatar">T</div>
-            <div>
-              <div class="author-name">Trust &amp; Estate Partner</div>
-              <div class="author-title">AmLaw 100 Firm, New York</div>
-              <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span
-                  class="star">★</span><span class="star">★</span></div>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <div class="testimonial-quote">We refer our most complex pre-immigration matters to IWTA. The analysis is
-            precise, the communication is clear, and our clients are always in good hands.</div>
-          <div class="testimonial-author">
-            <div class="author-avatar">P</div>
-            <div>
-              <div class="author-name">Private Wealth Attorney</div>
-              <div class="author-title">Boutique Wealth Practice, Miami</div>
-              <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span
-                  class="star">★</span><span class="star">★</span></div>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <div class="testimonial-quote">IWTA handled a voluntary disclosure matter for a client with significant
-            foreign asset exposure. The outcome was far better than we had modelled. Exceptional work.</div>
-          <div class="testimonial-author">
-            <div class="author-avatar">S</div>
-            <div>
-              <div class="author-name">Senior Fiduciary</div>
-              <div class="author-title">Multi-Family Office, Chicago</div>
-              <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span
-                  class="star">★</span><span class="star">★</span></div>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <div class="testimonial-quote">What distinguishes IWTA is that Jack Brister understands how attorneys think.
-            The written analysis is thorough, defensible, and delivered on time.</div>
-          <div class="testimonial-author">
-            <div class="author-avatar">E</div>
-            <div>
-              <div class="author-name">Estate Planning Counsel</div>
-              <div class="author-title">Regional Wealth Practice, Dallas</div>
-              <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span
-                  class="star">★</span><span class="star">★</span></div>
-            </div>
-          </div>
-        </div>
-        <!-- duplicate for seamless loop -->
-        <div class="testimonial-card">
-          <div class="testimonial-quote">Jack Brister is the first call I make when a trust client has foreign reporting
-            exposure. The technical depth and turnaround are consistently exceptional.</div>
-          <div class="testimonial-author">
-            <div class="author-avatar">T</div>
-            <div>
-              <div class="author-name">Trust &amp; Estate Partner</div>
-              <div class="author-title">AmLaw 100 Firm, New York</div>
-              <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span
-                  class="star">★</span><span class="star">★</span></div>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <div class="testimonial-quote">We refer our most complex pre-immigration matters to IWTA. The analysis is
-            precise, the communication is clear, and our clients are always in good hands.</div>
-          <div class="testimonial-author">
-            <div class="author-avatar">P</div>
-            <div>
-              <div class="author-name">Private Wealth Attorney</div>
-              <div class="author-title">Boutique Wealth Practice, Miami</div>
-              <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span
-                  class="star">★</span><span class="star">★</span></div>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <div class="testimonial-quote">IWTA handled a voluntary disclosure matter for a client with significant
-            foreign asset exposure. The outcome was far better than we had modelled. Exceptional work.</div>
-          <div class="testimonial-author">
-            <div class="author-avatar">S</div>
-            <div>
-              <div class="author-name">Senior Fiduciary</div>
-              <div class="author-title">Multi-Family Office, Chicago</div>
-              <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span
-                  class="star">★</span><span class="star">★</span></div>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <div class="testimonial-quote">What distinguishes IWTA is that Jack Brister understands how attorneys think.
-            The written analysis is thorough, defensible, and delivered on time.</div>
-          <div class="testimonial-author">
-            <div class="author-avatar">E</div>
-            <div>
-              <div class="author-name">Estate Planning Counsel</div>
-              <div class="author-title">Regional Wealth Practice, Dallas</div>
-              <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span
-                  class="star">★</span><span class="star">★</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  END TESTIMONIALS -->
 
   <!-- ─── CONTACT ───────────────────────────────────── -->
   <section class="contact" id="contact">
