@@ -1549,99 +1549,137 @@
       transition-delay: 0.3s;
     }
 
+    /* ─── HAMBURGER ──────────────────────────────────── */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+      z-index: 201;
+    }
+
+    .nav-hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--color-off-white);
+      border-radius: 2px;
+      transition: all 0.3s var(--ease);
+    }
+
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .nav-mobile {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: var(--color-navy-deep);
+      z-index: 200;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      opacity: 0;
+      transition: opacity 0.3s var(--ease);
+    }
+
+    .nav-mobile.open { opacity: 1; }
+
+    .nav-mobile-link {
+      font-size: 1.4rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(245,247,250,0.75);
+      text-decoration: none;
+      transition: color 0.25s;
+    }
+
+    .nav-mobile-link:hover { color: var(--color-off-white); }
+
+    .nav-mobile-cta {
+      color: var(--gold);
+      border: 1px solid rgba(201,168,76,0.4);
+      padding: 0.85rem 2rem;
+      border-radius: 3rem;
+      margin-top: 0.5rem;
+      font-size: 0.85rem;
+    }
+
     /* ─── RESPONSIVE ─────────────────────────────────── */
     @media (max-width: 1024px) {
 
+      .nav-hamburger { display: flex; }
+      .nav-links { display: none; }
+      .nav-cta { display: none; }
+
+      nav { padding: 1.5rem 2rem; }
+      nav.scrolled { padding: 1rem 2rem; }
+
       .services-header,
+      .insights-header,
+      .team-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+      }
+
+      .section-connector { display: none; }
+
+      .section-desc, .services-desc, .team-sub { max-width: 100%; }
+
       .process-grid,
-      .team-header,
       .contact-inner {
         grid-template-columns: 1fr;
         gap: 2rem;
       }
 
-      .bento-grid {
-        grid-template-columns: 1fr 1fr;
-      }
+      .bento-grid { grid-template-columns: 1fr 1fr; }
 
-      .bc-1,
-      .bc-2,
-      .bc-3,
-      .bc-4,
-      .bc-5,
-      .bc-6 {
-        grid-column: span 2;
-      }
+      .bc-1, .bc-2, .bc-6 { grid-column: span 2; }
+      .bc-3, .bc-4, .bc-5 { grid-column: span 1; }
 
-      .bc-3,
-      .bc-4,
-      .bc-5 {
-        grid-column: span 1;
-      }
+      .bc-6-inner { grid-template-columns: 1fr; gap: 1.5rem; }
 
-      .team-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
+      .insights-grid { grid-template-columns: 1fr; }
 
-      .insights-grid {
-        grid-template-columns: 1fr;
-      }
+      section { padding: 6rem 3rem; }
+      footer { padding: 3rem 3rem; }
 
-      nav {
-        padding: 1.5rem 2rem;
-      }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
 
-      nav.scrolled {
-        padding: 1rem 2rem;
-      }
-
-      .nav-links {
-        display: none;
-      }
-
-      section {
-        padding: 6rem 3rem;
-      }
-
-      footer {
-        padding: 3rem 3rem;
-      }
-
-      .footer-top {
-        grid-template-columns: 1fr 1fr;
-        gap: 2rem;
-      }
+      .founder-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .founder-photo { aspect-ratio: 4/3; position: static; }
+      .how-we-work { grid-template-columns: 1fr; gap: 2rem; }
     }
 
     @media (max-width: 640px) {
-      .hero-left {
-        padding: 8rem 2rem 4rem;
-      }
+      .hero-left { padding: 7rem 1.5rem 4rem; }
 
-      .bento-grid {
-        grid-template-columns: 1fr;
-      }
+      section { padding: 4rem 1.5rem; }
+      footer { padding: 3rem 1.5rem; }
 
-      .bc-1,
-      .bc-2,
-      .bc-3,
-      .bc-4,
-      .bc-5,
-      .bc-6 {
-        grid-column: span 1;
-      }
+      .credibility-strip { padding: 1.4rem 1.5rem; }
 
-      .form-row {
-        grid-template-columns: 1fr;
-      }
+      .bento-grid { grid-template-columns: 1fr; }
+      .bc-1, .bc-2, .bc-3, .bc-4, .bc-5, .bc-6 { grid-column: span 1; }
 
-      .team-grid {
-        grid-template-columns: 1fr 1fr;
-      }
+      .bc-6-inner { grid-template-columns: 1fr; gap: 1.5rem; }
 
-      .footer-top {
-        grid-template-columns: 1fr;
-      }
+      .who-we-serve-grid { grid-template-columns: 1fr !important; }
+      .who-we-serve-grid .office[style*="span 2"] { grid-column: span 1 !important; }
+
+      .form-row { grid-template-columns: 1fr; }
+
+      .footer-top { grid-template-columns: 1fr; }
+
+      .nav-logo img { height: 48px !important; }
+
+      .process-visual { position: static; }
     }
   </style>
 </head>
@@ -1663,7 +1701,17 @@
       <li><a href="#team">Our Team</a></li>
     </ul>
     <a href="#contact" class="nav-cta">Refer a Matter</a>
+    <button class="nav-hamburger" id="navToggle" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
+
+  <div class="nav-mobile" id="navMobile">
+    <a href="#services" class="nav-mobile-link">Services</a>
+    <a href="#process" class="nav-mobile-link">Approach</a>
+    <a href="#team" class="nav-mobile-link">Our Team</a>
+    <a href="#contact" class="nav-mobile-link nav-mobile-cta">Refer a Matter</a>
+  </div>
 
   <!-- ─── HERO ──────────────────────────────────────── -->
   <section class="hero" style="padding: 0;">
@@ -1927,7 +1975,7 @@
       <div class="section-connector"></div>
       <p class="team-sub">IWTA serves families whose lives, assets, citizenship, residency, and structures cross borders. We also support the professional advisors who need U.S. international tax input before implementing a plan, accepting a fiduciary role, or advising on a structure.</p>
     </div>
-    <div class="reveal" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; width: 100%;">
+    <div class="who-we-serve-grid reveal" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; width: 100%;">
       <div class="office" style="gap: 1.5rem; padding: 2rem;">
         <div style="width: 10px; height: 10px; background: var(--color-gold); border-radius: 50%; margin-top: 0.4rem; flex-shrink: 0;"></div>
         <div style="font-size: 1.15rem; color: var(--color-slate);">Global families with U.S. beneficiaries, assets, or reporting obligations</div>
@@ -2249,6 +2297,28 @@
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
     }, { threshold: 0.12 });
     document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // Hamburger menu
+    const navToggle = document.getElementById('navToggle');
+    const navMobile = document.getElementById('navMobile');
+    navToggle.addEventListener('click', () => {
+      const isOpen = navMobile.style.display === 'flex';
+      if (!isOpen) {
+        navMobile.style.display = 'flex';
+        setTimeout(() => navMobile.classList.add('open'), 10);
+      } else {
+        navMobile.classList.remove('open');
+        setTimeout(() => navMobile.style.display = 'none', 300);
+      }
+      navToggle.classList.toggle('open');
+    });
+    navMobile.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMobile.classList.remove('open');
+        navToggle.classList.remove('open');
+        setTimeout(() => navMobile.style.display = 'none', 300);
+      });
+    });
 
     // Contact form submit
     document.querySelector('.form-submit').addEventListener('click', () => {
