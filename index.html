@@ -133,10 +133,6 @@
       text-decoration: none;
     }
 
-    .nav-logo span {
-      color: var(--gold);
-    }
-
     .nav-links {
       display: flex;
       gap: 2.5rem;
@@ -256,15 +252,6 @@
       color: var(--gold);
     }
 
-    .hero-sub {
-      font-size: 1.05rem;
-      color: rgba(245, 247, 250, 0.75);
-      max-width: 60ch;
-      line-height: 1.8;
-      margin-bottom: 3.5rem;
-      text-shadow: 0 2px 16px rgba(0, 0, 0, 0.4);
-    }
-
     .hero-actions {
       display: flex;
       flex-direction: row;
@@ -297,14 +284,6 @@
       box-shadow: 0 20px 40px rgba(201, 168, 76, 0.3);
     }
 
-    .btn-primary svg {
-      transition: transform 0.3s var(--ease);
-    }
-
-    .btn-primary:hover svg {
-      transform: translateX(4px);
-    }
-
     .btn-ghost {
       font-size: 0.82rem;
       letter-spacing: 0.1em;
@@ -316,38 +295,6 @@
 
     .btn-ghost:hover {
       color: var(--color-off-white);
-    }
-
-    .live-dot {
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      font-size: 0.7rem;
-      color: #4caf82;
-      letter-spacing: 0.1em;
-    }
-
-    .live-dot::before {
-      content: '';
-      width: 6px;
-      height: 6px;
-      background: #4caf82;
-      border-radius: 50%;
-      animation: pulse-dot 2s ease-in-out infinite;
-    }
-
-    @keyframes pulse-dot {
-
-      0%,
-      100% {
-        opacity: 1;
-        transform: scale(1);
-      }
-
-      50% {
-        opacity: 0.5;
-        transform: scale(0.8);
-      }
     }
 
     .hero-scroll-hint {
@@ -608,13 +555,6 @@
       stroke: var(--color-off-white);
     }
 
-    .bento-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 0.8rem;
-      color: var(--muted);
-      margin-bottom: 1rem;
-    }
-
     .bento-title {
       font-size: 1.35rem;
       font-weight: 600;
@@ -652,22 +592,6 @@
       grid-template-columns: 1fr 2fr;
       gap: 4rem;
       align-items: center;
-    }
-
-    .bc-6-stat {
-      font-family: 'Playfair Display', serif;
-      font-size: 6rem;
-      font-weight: 600;
-      color: var(--gold);
-      line-height: 1;
-    }
-
-    .bc-6-label {
-      font-size: 0.85rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-top: 0.5rem;
     }
 
     .bc-6-body {
@@ -793,44 +717,6 @@
       color: #4caf82;
     }
 
-    .coverage-bar {
-      margin-top: 2rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid var(--border);
-    }
-
-    .coverage-label {
-      font-size: 0.7rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 0.75rem;
-    }
-
-    .coverage-track {
-      height: 4px;
-      background: var(--gold-dim);
-      border-radius: 2px;
-      overflow: hidden;
-    }
-
-    .coverage-fill {
-      height: 100%;
-      background: var(--gold);
-      border-radius: 2px;
-      animation: fill-bar 2s 0.5s var(--ease) both;
-    }
-
-    @keyframes fill-bar {
-      from {
-        width: 0;
-      }
-
-      to {
-        width: 78%;
-      }
-    }
-
     /* ─── INSIGHTS ───────────────────────────────────── */
     .insights {
       background: var(--bg);
@@ -942,91 +828,6 @@
 
     /* team-header and team-sub inherit from combined rules above */
 
-    .team-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1.25rem;
-    }
-
-    .team-card {
-      background: var(--color-ice-blue);
-      border: 1px solid var(--color-silver);
-      border-radius: 1.5rem;
-      overflow: hidden;
-      transition: border-color 0.4s, transform 0.4s var(--ease);
-    }
-
-    .team-card:hover {
-      border-color: rgba(46, 84, 151, 0.35);
-      transform: translateY(-3px);
-      box-shadow: 0 16px 40px rgba(13, 37, 69, 0.1);
-    }
-
-    .team-portrait {
-      aspect-ratio: 1;
-      background: linear-gradient(135deg, var(--color-navy-brand) 0%, var(--color-navy-deep) 100%);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .portrait-lines {
-      position: absolute;
-      inset: 0;
-      background: repeating-linear-gradient(-45deg,
-          transparent,
-          transparent 2px,
-          rgba(201, 168, 76, 0.06) 2px,
-          rgba(201, 168, 76, 0.06) 4px);
-    }
-
-    .portrait-initials {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
-      font-weight: 600;
-      color: rgba(245, 247, 250, 0.3);
-      letter-spacing: 0.05em;
-    }
-
-    .team-info {
-      padding: 1.5rem;
-    }
-
-    .team-name {
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--color-navy-deep);
-      margin-bottom: 0.25rem;
-    }
-
-    .team-role {
-      font-size: 0.75rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 1rem;
-    }
-
-    .team-jurisdictions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-    }
-
-    .tj {
-      font-size: 0.65rem;
-      letter-spacing: 0.08em;
-      color: var(--color-navy-brand);
-      background: rgba(27, 58, 107, 0.08);
-      border: 1px solid rgba(27, 58, 107, 0.15);
-      padding: 0.2rem 0.6rem;
-      border-radius: 2rem;
-    }
-
     /* ─── FOUNDER ───────────────────────────────────── */
     .founder-grid {
       display: grid;
@@ -1082,79 +883,6 @@
       line-height: 1.85;
       margin-bottom: 1.5rem;
     }
-
-    .quotes-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin: 4rem 0;
-    }
-
-    .quote-card {
-      background: var(--color-ice-blue);
-      border: 1px solid var(--border);
-      border-radius: 1.5rem;
-      padding: 2.5rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 2rem;
-    }
-
-    .quote-text {
-      font-family: 'Playfair Display', serif;
-      font-size: 1rem;
-      font-style: italic;
-      color: var(--color-navy-deep);
-      line-height: 1.7;
-    }
-
-    .quote-text::before {
-      content: '\201C';
-      color: var(--gold);
-      font-size: 1.4rem;
-      margin-right: 0.1em;
-    }
-
-    .quote-author {
-      display: flex;
-      align-items: center;
-      gap: 0.85rem;
-    }
-
-    .quote-avatar {
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      background: var(--color-navy-brand);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Playfair Display', serif;
-      font-size: 0.85rem;
-      color: var(--color-off-white);
-      flex-shrink: 0;
-    }
-
-    .quote-name {
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--color-navy-deep);
-    }
-
-    .quote-firm {
-      font-size: 0.72rem;
-      color: var(--muted);
-      margin-top: 0.15rem;
-    }
-
-    .quote-stars {
-      display: flex;
-      gap: 2px;
-      margin-top: 0.25rem;
-    }
-
-    .quote-stars span { color: var(--gold); font-size: 0.65rem; }
 
     .how-we-work {
       display: grid;
@@ -1450,18 +1178,6 @@
 
     .footer-brand {
       max-width: 38ch;
-    }
-
-    .footer-logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 1rem;
-      color: var(--color-off-white);
-      margin-bottom: 1rem;
-      line-height: 1.3;
-    }
-
-    .footer-logo span {
-      color: var(--gold);
     }
 
     .footer-tagline {
@@ -2149,56 +1865,60 @@
       </div>
       <div class="contact-form reveal reveal-delay-1">
         <div class="form-title">Request a Confidential Consultation</div>
-        <div class="form-row">
-          <div class="form-field">
-            <label class="form-label">First Name</label>
-            <input type="text" class="form-input" placeholder="First name" />
+        <form class="consultation-form" name="consultation" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="consultation" />
+          <p hidden><input name="bot-field" /></p>
+          <div class="form-row">
+            <div class="form-field">
+              <label class="form-label">First Name</label>
+              <input type="text" name="first-name" class="form-input" placeholder="First name" />
+            </div>
+            <div class="form-field">
+              <label class="form-label">Last Name</label>
+              <input type="text" name="last-name" class="form-input" placeholder="Last name" />
+            </div>
           </div>
           <div class="form-field">
-            <label class="form-label">Last Name</label>
-            <input type="text" class="form-input" placeholder="Last name" />
+            <label class="form-label">Email Address</label>
+            <input type="email" name="email" class="form-input" placeholder="your@firm.com" />
           </div>
-        </div>
-        <div class="form-field">
-          <label class="form-label">Email Address</label>
-          <input type="email" class="form-input" placeholder="your@firm.com" />
-        </div>
-        <div class="form-field">
-          <label class="form-label">Your Role</label>
-          <select class="form-select">
-            <option value="" disabled selected>Select your role</option>
-            <option>Attorney — Trust &amp; Estate</option>
-            <option>Attorney — Private Wealth</option>
-            <option>Attorney — Tax</option>
-            <option>Fiduciary / Trust Officer</option>
-            <option>Family Office</option>
-            <option>Accountant / CPA</option>
-            <option>Individual / Family</option>
-            <option>Other</option>
-          </select>
-        </div>
-        <div class="form-field">
-          <label class="form-label">Primary Issue Area</label>
-          <select class="form-select">
-            <option value="" disabled selected>Select an issue area</option>
-            <option>Foreign Trust Reporting</option>
-            <option>Pre-Immigration Planning</option>
-            <option>Expatriation / Exit Tax</option>
-            <option>FBAR &amp; Foreign Asset Reporting</option>
-            <option>Voluntary Disclosure</option>
-            <option>NRA Tax Planning</option>
-            <option>U.S. Real Estate (Foreign Investor)</option>
-            <option>FATCA Compliance</option>
-            <option>Business Activities</option>
-            <option>Other / Not Sure</option>
-          </select>
-        </div>
-        <div class="form-field">
-          <label class="form-label">Brief Context</label>
-          <textarea class="form-textarea"
-            placeholder="Please describe the matter briefly. All enquiries are treated as confidential."></textarea>
-        </div>
-        <button class="form-submit">Schedule a Confidential Consultation</button>
+          <div class="form-field">
+            <label class="form-label">Your Role</label>
+            <select name="role" class="form-select">
+              <option value="" disabled selected>Select your role</option>
+              <option>Attorney — Trust &amp; Estate</option>
+              <option>Attorney — Private Wealth</option>
+              <option>Attorney — Tax</option>
+              <option>Fiduciary / Trust Officer</option>
+              <option>Family Office</option>
+              <option>Accountant / CPA</option>
+              <option>Individual / Family</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label class="form-label">Primary Issue Area</label>
+            <select name="issue-area" class="form-select">
+              <option value="" disabled selected>Select an issue area</option>
+              <option>Foreign Trust Reporting</option>
+              <option>Pre-Immigration Planning</option>
+              <option>Expatriation / Exit Tax</option>
+              <option>FBAR &amp; Foreign Asset Reporting</option>
+              <option>Voluntary Disclosure</option>
+              <option>NRA Tax Planning</option>
+              <option>U.S. Real Estate (Foreign Investor)</option>
+              <option>FATCA Compliance</option>
+              <option>Business Activities</option>
+              <option>Other / Not Sure</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label class="form-label">Brief Context</label>
+            <textarea name="message" class="form-textarea"
+              placeholder="Please describe the matter briefly. All enquiries are treated as confidential."></textarea>
+          </div>
+          <button type="submit" class="form-submit">Schedule a Confidential Consultation</button>
+        </form>
       </div>
     </div>
   </section>
@@ -2320,16 +2040,27 @@
       });
     });
 
-    // Contact form submit
-    document.querySelector('.form-submit').addEventListener('click', () => {
-      const btn = document.querySelector('.form-submit');
+    // Contact form — Netlify Forms
+    document.querySelector('.consultation-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const form = e.target;
+      const btn = form.querySelector('.form-submit');
       btn.textContent = 'Sending…';
       btn.style.opacity = '0.7';
-      setTimeout(() => {
+      try {
+        await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(new FormData(form)).toString()
+        });
         btn.textContent = 'Request Received';
         btn.style.opacity = '1';
         btn.style.background = '#4caf82';
-      }, 1200);
+        form.reset();
+      } catch {
+        btn.textContent = 'Please try again';
+        btn.style.opacity = '1';
+      }
     });
   </script>
 </body>
