@@ -1405,16 +1405,26 @@
   .section-h2 {
     font-size: 2rem;
     line-height: 1.2;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0;
   }
+
+  /* Override more-specific desktop rule */
+  .contact-left .section-h2 { margin-bottom: 0; }
 
   .section-tag { margin-bottom: 0.6rem; }
 
-  /* ── Gold bar divider — re-show as stacked line below headings ── */
+  /* ── Section header flex containers — remove gap so connector margin controls spacing ── */
+  .services-header,
+  .team-header {
+    gap: 0;
+  }
+
+  /* ── Gold bar divider — consistent left-aligned bar, uniform spacing everywhere ── */
   .section-connector,
   .services-connector {
     display: block !important;
     flex: none;
+    align-self: flex-start;
     width: 36px !important;
     margin: 0.75rem 0 1.25rem !important;
   }
